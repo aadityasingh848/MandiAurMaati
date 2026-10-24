@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><meta content="MandiAurMaati frontend preview for agricultural tools, crop questions and farming resources." name="description"/><title>MandiAurMaati — Farming Assistant Preview</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+/* Dark / light theme */
+html { color-scheme: light; }
+body { transition: background-color .2s ease, color .2s ease; }
+body.dark-mode { color-scheme: dark; background: #101713 !important; color: #e7eee9; }
+body.dark-mode main,
+body.dark-mode [class~="bg-surface"],
+body.dark-mode [class~="bg-background"],
+body.dark-mode [class~="bg-white"],
+body.dark-mode [class*="bg-surface-container"],
+body.dark-mode [class~="bg-surface-variant"],
+body.dark-mode [class~="bg-surface-bright"],
+body.dark-mode [class~="bg-surface-dim"] { background-color: #17211b !important; }
+body.dark-mode [class~="text-on-surface"],
+body.dark-mode [class~="text-on-background"],
+body.dark-mode [class~="text-on-surface-variant"],
+body.dark-mode [class~="text-gray-900"],
+body.dark-mode [class~="text-gray-800"],
+body.dark-mode [class~="text-gray-700"] { color: #e2ebe5 !important; }
+body.dark-mode [class~="text-primary"] { color: #a7e7c3 !important; }
+body.dark-mode [class~="border-outline-variant"],
+body.dark-mode [class~="border-gray-200"],
+body.dark-mode [class~="border-gray-300"] { border-color: #3b4a40 !important; }
+body.dark-mode input:not([type="checkbox"]),
+body.dark-mode textarea,
+body.dark-mode select { background-color: #202c24 !important; color: #edf5ef !important; border-color: #45564a !important; }
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder { color: #a8b8ad !important; }
+body.dark-mode .high-contrast-card { border-color: #45564a !important; }
+@media (prefers-reduced-motion: reduce) { body { transition: none; } }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed-variant": "#713700",
+          "surface-tint": "#006c48",
+          "inverse-surface": "#25342d",
+          "tertiary-container": "#965f00",
+          "on-tertiary-fixed": "#2a1700",
+          "surface-container": "#e0f2e7",
+          "surface-variant": "#d5e7dc",
+          "on-primary-fixed-variant": "#005236",
+          "on-tertiary": "#ffffff",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "on-primary-container": "#a6ffd0",
+          "inverse-primary": "#7cd9aa",
+          "surface-container-low": "#e6f8ed",
+          "background": "#ecfef3",
+          "on-primary": "#ffffff",
+          "secondary-container": "#fc8f34",
+          "tertiary-fixed-dim": "#ffb95f",
+          "on-primary-fixed": "#002113",
+          "on-secondary": "#ffffff",
+          "on-background": "#101e18",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#ffdcc5",
+          "primary": "#005f3f",
+          "secondary": "#944a00",
+          "primary-fixed": "#98f6c5",
+          "primary-fixed-dim": "#7cd9aa",
+          "on-error-container": "#93000a",
+          "primary-container": "#0d7a53",
+          "surface-dim": "#cdded4",
+          "tertiary-fixed": "#ffddb8",
+          "surface-bright": "#ecfef3",
+          "secondary-fixed-dim": "#ffb783",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-container": "#ffe9d4",
+          "on-tertiary-fixed-variant": "#653e00",
+          "surface": "#ecfef3",
+          "outline": "#6e7a72",
+          "on-surface-variant": "#3e4942",
+          "on-secondary-fixed": "#301400",
+          "on-surface": "#101e18",
+          "outline-variant": "#bec9c0",
+          "on-secondary-container": "#663100",
+          "surface-container-high": "#dbece2",
+          "surface-container-highest": "#d5e7dc",
+          "tertiary": "#764900",
+          "inverse-on-surface": "#e3f5ea"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xl": "2.5rem",
+          "margin": "2rem",
+          "gutter-mobile": "1rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "gutter-desktop": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Space Grotesk", "sans-serif"],
+          "headline-sm": ["Space Grotesk", "sans-serif"],
+          "headline-md": ["Space Grotesk", "sans-serif"],
+          "body-md": ["Manrope", "sans-serif"],
+          "label-sm": ["Space Grotesk", "sans-serif"],
+          "label-md": ["Space Grotesk", "sans-serif"],
+          "body-lg": ["Manrope", "sans-serif"],
+          "display-lg": ["Space Grotesk", "sans-serif"],
+          "body-sm": ["Manrope", "sans-serif"],
+          "label-lg": ["Space Grotesk", "sans-serif"]
+        }
+      }
+    }
+  };
+</script><style id="maati-sidebar-style">
+/* Persistent left dashboard navigation */
+:root { scroll-behavior: smooth; }
+#maatiSidebar { position:fixed; z-index:35; left:0; top:80px; bottom:0; width:248px; overflow-y:auto; padding:18px 12px 24px; background:#f3f7f1; border-right:1px solid #d8e2d7; color:#183326; box-shadow:3px 0 18px rgba(18,45,28,.05); }
+#maatiSidebar .sidebar-brand { padding:7px 10px 16px; border-bottom:1px solid #d7e2d7; margin-bottom:12px; }
+#maatiSidebar .sidebar-kicker { font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#66816d; margin:15px 10px 6px; }
+#maatiSidebar a { display:flex; align-items:center; gap:10px; padding:10px 11px; margin:3px 0; border-radius:10px; color:inherit; text-decoration:none; font-size:13px; font-weight:650; transition:background .15s, color .15s; }
+#maatiSidebar a:hover, #maatiSidebar a[aria-current="location"] { background:#dcecdf; color:#14532d; }
+#maatiSidebar .material-symbols-outlined { font-size:20px; }
+body > main { margin-left:248px !important; width:calc(100% - 248px) !important; }
+body.dark-mode #maatiSidebar { background:#141f18; color:#e3eee5; border-color:#34483a; }
+body.dark-mode #maatiSidebar .sidebar-brand { border-color:#34483a; }
+body.dark-mode #maatiSidebar .sidebar-kicker { color:#a2b9a7; }
+body.dark-mode #maatiSidebar a:hover, body.dark-mode #maatiSidebar a[aria-current="location"] { background:#263c2d; color:#d6f5dd; }
+#maatiSidebarToggle { display:none; position:fixed; z-index:45; left:12px; bottom:14px; border:0; border-radius:999px; padding:12px 15px; background:#1d5a35; color:white; box-shadow:0 5px 20px #0003; font-weight:750; }
+@media (max-width: 900px) {
+  #maatiSidebar { width:240px; transform:translateX(-102%); transition:transform .2s ease; top:72px; box-shadow:8px 0 28px #0002; }
+  #maatiSidebar.open { transform:translateX(0); }
+  body > main { margin-left:0 !important; width:100% !important; }
+  #maatiSidebarToggle { display:block; }
+}
+@media (prefers-reduced-motion: reduce) { #maatiSidebar, #maatiSidebar a { transition:none; } }
+</style><style id="maati-sidebar-visual-refresh">
+/* Clear visual separation: deep forest dashboard rail + warm neutral content canvas */
+#maatiSidebar{
+ background:linear-gradient(180deg,#142b22 0%,#10231c 100%) !important;
+ color:#f2f6ee !important; border-right:1px solid #304b3b !important;
+ box-shadow:8px 0 28px rgba(10,28,19,.14) !important;
+ padding:20px 13px 26px !important;
+}
+#maatiSidebar .sidebar-brand{border-bottom:1px solid #355343 !important;padding:9px 11px 18px !important;}
+#maatiSidebar .sidebar-brand > div:first-child{color:#e4b85d !important;letter-spacing:.16em !important;}
+#maatiSidebar .sidebar-brand > div:nth-child(2){color:#fffdf6 !important;font-size:20px !important;}
+#maatiSidebar .sidebar-brand > div:nth-child(3){color:#b8c9bd !important;}
+#maatiSidebar .sidebar-kicker{color:#e4b85d !important;font-size:10px !important;letter-spacing:.16em !important;margin:19px 10px 8px !important;}
+#maatiSidebar a{color:#dce8df !important;border:1px solid transparent !important;border-radius:11px !important;padding:11px 12px !important;margin:4px 0 !important;font-weight:600 !important;}
+#maatiSidebar a .material-symbols-outlined{color:#a9c3b0 !important;transition:color .15s ease;}
+#maatiSidebar a:hover{background:#203d2e !important;color:#fff !important;border-color:#355943 !important;}
+#maatiSidebar a:hover .material-symbols-outlined{color:#f0c66c !important;}
+#maatiSidebar a[aria-current="location"]{background:#e4b85d !important;color:#1b2b20 !important;border-color:#f1d18a !important;box-shadow:0 4px 12px rgba(0,0,0,.12) !important;}
+#maatiSidebar a[aria-current="location"] .material-symbols-outlined{color:#1b2b20 !important;}
+#maatiSidebar .sidebar-note{background:#203a2d !important;color:#d8e7dc !important;border:1px solid #365744 !important;border-radius:12px !important;}
+#maatiSidebar .sidebar-note strong{color:#f0c66c !important;}
+body > main{background:#f5f7f2 !important;min-height:calc(100vh - 80px);border-left:1px solid #e0e7dd;}
+body.dark-mode > main{background:#101713 !important;border-left-color:#26372c !important;}
+body.dark-mode #maatiSidebar{background:linear-gradient(180deg,#101f18 0%,#0c1913 100%) !important;border-right-color:#2c4635 !important;}
+body.dark-mode #maatiSidebar a{color:#dce8df !important;}
+#maatiSidebarToggle{background:#e4b85d !important;color:#1b2b20 !important;box-shadow:0 8px 26px rgba(10,28,19,.25) !important;}
+@media(max-width:900px){body > main{border-left:0 !important;}#maatiSidebar{border-right:1px solid #45614f !important;box-shadow:12px 0 36px rgba(0,0,0,.25) !important;}}
+</style>
+<style id="maati-monochrome-dashboard-theme">
+/* Monochrome top bar and left dashboard rail; clean black-on-white workspace */
+body > header{
+  background:linear-gradient(180deg,#303030 0%,#222222 100%) !important;
+  color:#f5f5f5 !important; border-bottom:1px solid #444 !important;
+  box-shadow:0 3px 16px rgba(0,0,0,.16) !important;
+}
+body > header .text-on-primary,
+body > header .text-on-primary-container,
+body > header .text-on-surface,
+body > header .text-on-surface-variant{color:#f1f1f1 !important;}
+body > header nav a{color:#d4d4d4 !important;}
+body > header nav a:hover{color:#fff !important;background:#414141 !important;border-radius:8px;}
+body > header nav a[aria-current="page"]{background:#e7e7e7 !important;color:#202020 !important;border-radius:8px;}
+body > header select{background:#3a3a3a !important;color:#f5f5f5 !important;border:1px solid #555 !important;}
+body > header button{border-color:#555 !important;}
+body > header #themeModeToggleBtn{background:#3a3a3a !important;color:#f5f5f5 !important;}
+body > header #headerMicQuickBtn{background:#ededed !important;color:#222 !important;}
+body > header #headerMicQuickBtn span{color:#222 !important;}
+#maatiSidebar{
+  background:linear-gradient(180deg,#303030 0%,#202020 100%) !important;
+  color:#f1f1f1 !important;border-right:1px solid #484848 !important;
+  box-shadow:7px 0 22px rgba(0,0,0,.10) !important;
+}
+#maatiSidebar .sidebar-brand{border-color:#4b4b4b !important;}
+#maatiSidebar .sidebar-brand > div:first-child,#maatiSidebar .sidebar-kicker{color:#c8c8c8 !important;}
+#maatiSidebar .sidebar-brand > div:nth-child(2){color:#fff !important;}
+#maatiSidebar .sidebar-brand > div:nth-child(3){color:#bdbdbd !important;}
+#maatiSidebar a{color:#e1e1e1 !important;border-color:transparent !important;}
+#maatiSidebar a .material-symbols-outlined{color:#bdbdbd !important;}
+#maatiSidebar a:hover{background:#414141 !important;color:#fff !important;border-color:#555 !important;}
+#maatiSidebar a:hover .material-symbols-outlined{color:#fff !important;}
+#maatiSidebar a[aria-current="location"]{background:#e5e5e5 !important;color:#202020 !important;border-color:#f4f4f4 !important;box-shadow:none !important;}
+#maatiSidebar a[aria-current="location"] .material-symbols-outlined{color:#202020 !important;}
+#maatiSidebar .sidebar-note{background:#383838 !important;color:#dedede !important;border-color:#505050 !important;}
+#maatiSidebar .sidebar-note strong{color:#fff !important;}
+#maatiSidebarToggle{background:#303030 !important;color:#fff !important;border:1px solid #555 !important;}
+body > main{background:#fff !important;color:#171717 !important;border-left:1px solid #e5e5e5 !important;}
+body.dark-mode > main{background:#fff !important;color:#171717 !important;border-left-color:#e5e5e5 !important;}
+@media(max-width:900px){#maatiSidebar{border-right-color:#484848 !important;}}
+</style>
+<style id="maati-dark-green-white-dashboard">
+/* Matching dark-green-and-white theme for the top bar and left sidebar */
+body > header { background:linear-gradient(180deg,#194b37 0%,#103526 100%) !important; color:#ffffff !important; border-bottom:1px solid #2f624d !important; box-shadow:0 3px 16px rgba(12,42,29,.18) !important; }
+body > header * { --tw-text-opacity:1; }
+body > header .text-on-primary, body > header .text-on-primary-container, body > header .text-on-surface, body > header .text-on-surface-variant, body > header .text-gray-900, body > header .text-gray-800, body > header .text-gray-700 { color:#ffffff !important; }
+body > header nav a { color:#e8f3ec !important; }
+body > header nav a:hover { color:#ffffff !important; background:#2a5a43 !important; border-radius:8px; }
+body > header nav a[aria-current="page"] { background:#ffffff !important; color:#16432f !important; border-radius:8px; }
+body > header button, body > header select { background-color:#24543e !important; color:#ffffff !important; border-color:#4b795f !important; }
+body > header button:hover { background-color:#32684d !important; }
+#maatiSidebar { background:linear-gradient(180deg,#194b37 0%,#103526 100%) !important; color:#ffffff !important; border-right:1px solid #2f624d !important; box-shadow:8px 0 24px rgba(12,42,29,.12) !important; }
+#maatiSidebar .sidebar-brand { border-bottom-color:#3a6a51 !important; }
+#maatiSidebar .sidebar-kicker { color:#c4dfce !important; }
+#maatiSidebar a, #maatiSidebar button { color:#edf7f0 !important; }
+#maatiSidebar a:hover, #maatiSidebar button:hover { background:#285940 !important; color:#ffffff !important; }
+#maatiSidebar a[aria-current="page"], #maatiSidebar a.active, #maatiSidebar .active { background:#ffffff !important; color:#16432f !important; box-shadow:0 2px 8px rgba(0,0,0,.10) !important; }
+#maatiSidebar a[aria-current="page"] *, #maatiSidebar a.active *, #maatiSidebar .active * { color:#16432f !important; }
+#maatiSidebar .sidebar-note, #maatiSidebar [class*="note"], #maatiSidebar [class*="card"] { border-color:#3a6a51 !important; }
+#maatiSidebar svg { color:inherit; }
+@media (max-width: 760px) { #maatiSidebar { box-shadow:8px 0 28px rgba(0,0,0,.22) !important; } }
+</style>
+<style id="maati-desktop-drawer-layout-fix">
+/* Sidebar behaves as a drawer on desktop and mobile, never squeezing the content */
+html { scroll-padding-top: 100px; }
+body { overflow-x: hidden !important; overflow-y: auto !important; }
+body > main { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+#maatiSidebar {
+  position: fixed !important; z-index: 1001 !important;
+  top: 80px !important; bottom: 0 !important; left: 0 !important;
+  width: min(300px, 88vw) !important; max-height: calc(100dvh - 80px) !important;
+  overflow-y: auto !important; overscroll-behavior: contain !important;
+  transform: translateX(-105%) !important; visibility: hidden !important;
+  transition: transform .24s ease, visibility .24s ease !important;
+  pointer-events: none !important;
+}
+#maatiSidebar.open {
+  transform: translateX(0) !important; visibility: visible !important;
+  pointer-events: auto !important;
+}
+#maatiSidebarToggle {
+  display: inline-flex !important; align-items: center; gap: 5px;
+  position: fixed !important; z-index: 1003 !important; left: 14px !important;
+  bottom: 16px !important; top: auto !important; cursor: pointer;
+}
+#maatiSidebarBackdrop {
+  position: fixed; inset: 80px 0 0 0; z-index: 1000;
+  width: 100%; height: calc(100dvh - 80px); padding: 0; margin: 0;
+  border: 0; border-radius: 0; background: rgba(8,16,11,.48);
+  opacity: 0; visibility: hidden; cursor: pointer;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+#maatiSidebarBackdrop.visible { opacity: 1; visibility: visible; }
+#maatiSidebarBackdrop[hidden] { display: none !important; }
+#maatiSidebar a { scroll-margin-top: 100px; }
+body > header { z-index: 1002 !important; }
+@media (max-width: 900px) {
+  #maatiSidebar { top: 72px !important; max-height: calc(100dvh - 72px) !important; }
+  #maatiSidebarBackdrop { top: 72px; height: calc(100dvh - 72px); }
+  body > main { margin-left: 0 !important; width: 100% !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #maatiSidebar, #maatiSidebarBackdrop { transition: none !important; }
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<style id="maati-header-compact-fix">
+/* Compact, responsive top navigation: keep every control inside the header */
+body > header{height:76px !important; min-height:76px !important; overflow:visible !important;}
+body > header > div{height:76px !important; min-height:76px !important; padding-left:12px !important; padding-right:12px !important; gap:10px !important; flex-wrap:nowrap !important; min-width:0 !important;}
+body > header > div > div:first-child{display:flex !important; align-items:center !important; gap:12px !important; flex:1 1 auto !important; min-width:0 !important; overflow:hidden !important;}
+body > header > div > div:first-child > div:first-child{flex:0 1 245px !important; min-width:135px !important; gap:7px !important;}
+body > header > div > div:first-child > div:first-child img{width:34px !important; height:34px !important; flex:0 0 34px !important;}
+body > header > div > div:first-child > div:first-child span:first-child{font-size:14px !important; line-height:1.15 !important; overflow-wrap:anywhere !important;}
+body > header > div > div:first-child > div:first-child span:nth-child(2){font-size:11px !important; line-height:1.2 !important;}
+body > header nav{display:flex !important; flex:1 1 auto !important; min-width:0 !important; gap:2px !important; align-items:center !important; overflow-x:auto !important; overflow-y:hidden !important; scrollbar-width:thin !important; white-space:nowrap !important;}
+body > header nav a{font-size:12px !important; line-height:1.15 !important; padding:7px 8px !important; white-space:nowrap !important; flex:0 0 auto !important; border-radius:7px !important;}
+body > header > div > div:last-child{display:flex !important; align-items:center !important; flex:0 0 auto !important; gap:7px !important; min-width:0 !important;}
+body > header > div > div:last-child > div:first-child{padding:5px 8px !important; gap:4px !important; font-size:11px !important;}
+body > header select{font-size:12px !important; padding:7px 24px 7px 8px !important; max-width:145px !important;}
+body > header #themeModeToggleBtn{font-size:12px !important; padding:7px 9px !important; white-space:nowrap !important;}
+@media(max-width:1450px){body > header > div > div:first-child > div:first-child{flex-basis:185px !important;} body > header nav a{font-size:11px !important;padding:6px 5px !important;} body > header > div > div:last-child > div:first-child{display:none !important;}}
+@media(max-width:1100px){body > header{height:auto !important;min-height:76px !important;} body > header > div{height:auto !important;min-height:76px !important;flex-wrap:wrap !important;padding-top:8px !important;padding-bottom:8px !important;} body > header > div > div:first-child{flex-basis:100% !important;overflow:visible !important;} body > header nav{max-width:100% !important;} body > header > div > div:last-child{margin-left:auto !important;} body > header > div > div:first-child > div:first-child span:nth-child(2){display:none !important;}}
+</style>
+<style id="maati-reference-dashboard-polish">
+/* Reference-inspired MandiAurMaati top bar */
+body > header { height: 86px !important; min-height:86px !important; background:#064b39 !important; border-bottom:1px solid rgba(255,255,255,.18) !important; }
+body > header > div { height:86px !important; min-height:86px !important; padding-left:16px !important; padding-right:16px !important; gap:14px !important; }
+body > header > div > div:first-child { gap:20px !important; }
+body > header > div > div:first-child > div:first-child { flex:0 0 270px !important; min-width:210px !important; gap:10px !important; overflow:visible !important; }
+body > header > div > div:first-child > div:first-child img { width:50px !important; height:50px !important; border-radius:50% !important; object-fit:contain !important; flex:0 0 50px !important; }
+body > header > div > div:first-child > div:first-child span:first-child { font-size:20px !important; line-height:1.1 !important; white-space:nowrap !important; overflow-wrap:normal !important; font-weight:700 !important; }
+body > header > div > div:first-child > div:first-child span:nth-child(2) { display:block !important; font-size:10px !important; line-height:1.2 !important; margin-top:4px !important; white-space:nowrap !important; }
+body > header nav { flex:1 1 auto !important; gap:4px !important; overflow-x:auto !important; scrollbar-width:none !important; }
+body > header nav::-webkit-scrollbar { display:none !important; }
+body > header nav a { display:inline-flex !important; align-items:center !important; justify-content:center !important; text-align:center !important; white-space:normal !important; max-width:120px !important; min-height:48px !important; font-size:12px !important; line-height:1.25 !important; padding:6px 8px !important; color:#f2f7ee !important; }
+body > header nav a[aria-current="page"] { background:#d9f0d8 !important; color:#07533c !important; }
+body > header > div > div:last-child { gap:10px !important; }
+body > header #headerMicQuickBtn { display:none !important; }
+body > header select { background:#124f40 !important; color:#f5f8ef !important; border:1px solid rgba(255,255,255,.16) !important; border-radius:22px !important; }
+body > header #themeModeToggleBtn { border:1px solid rgba(255,255,255,.2) !important; border-radius:22px !important; min-height:42px !important; }
+body > header > div > div:last-child > div:last-child img { width:54px !important; height:54px !important; border-radius:50% !important; object-fit:cover !important; }
+@media(max-width:1450px) {
+ body > header > div > div:first-child > div:first-child { flex-basis:225px !important; min-width:195px !important; }
+ body > header > div > div:first-child > div:first-child span:first-child { font-size:17px !important; }
+ body > header nav a { font-size:11px !important; padding:6px 5px !important; max-width:105px !important; }
+ body > header > div > div:last-child > div:first-child { display:none !important; }
+ body > header > div > div:last-child > div:last-child img { width:46px !important; height:46px !important; }
+}
+@media(max-width:1100px) {
+ body > header { height:auto !important; min-height:86px !important; }
+ body > header > div { height:auto !important; min-height:86px !important; flex-wrap:wrap !important; }
+ body > header > div > div:first-child { flex-basis:100% !important; }
+ body > header nav { width:100% !important; }
+ body > header > div > div:last-child { margin-left:auto !important; }
+}
+</style>
+<style id="maati-notifications-ui">
+.maati-notification-wrap{display:flex;align-items:center;flex-shrink:0}
+.maati-notification-button{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:7px 11px;border:1px solid rgba(255,255,255,.24);border-radius:12px;background:rgba(255,255,255,.10);color:#fff;font:600 12px/1.2 inherit;cursor:pointer;transition:background .18s ease,transform .18s ease}
+.maati-notification-button:hover,.maati-notification-button[aria-expanded="true"]{background:rgba(255,255,255,.2)}
+.maati-notification-button .material-symbols-outlined{font-size:21px}
+.maati-notification-badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:#f5c65c;color:#243a25;font-size:10px;font-weight:800}
+.maati-notifications-panel{position:fixed;z-index:2000;top:84px;right:18px;width:min(390px,calc(100vw - 24px));max-height:min(76vh,680px);overflow:auto;background:#fff;color:#1e2d23;border:1px solid #dce7dc;border-radius:18px;box-shadow:0 18px 60px rgba(12,36,22,.24);padding:18px;font-family:inherit}
+.maati-notifications-panel[hidden]{display:none!important}
+.maati-notifications-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid #e8eee8}
+.maati-notifications-eyebrow{margin:0 0 4px;color:#4b7957;font-size:10px;letter-spacing:.14em;font-weight:800}
+.maati-notifications-head h2{margin:0;font-size:22px;line-height:1.2;color:#203d2a}
+.maati-notifications-head p:last-child{margin:5px 0 0;color:#6b796e;font-size:12px}
+.maati-notifications-close{border:0;border-radius:9px;background:#edf4ed;color:#294a34;width:32px;height:32px;font-size:24px;line-height:1;cursor:pointer}
+.maati-notifications-list{display:grid;gap:0}
+.maati-notification-item{display:flex;align-items:flex-start;gap:12px;padding:15px 0;border-bottom:1px solid #edf1ed}
+.maati-notification-item[data-unread="true"]{background:linear-gradient(90deg,#f4f9f2,transparent);margin-inline:-8px;padding-inline:8px}
+.maati-notification-icon{display:flex;align-items:center;justify-content:center;flex:0 0 38px;height:38px;border-radius:12px;font-size:19px}
+.maati-notification-icon.weather{background:#fff3d9}.maati-notification-icon.crops{background:#e6f4e6}.maati-notification-icon.market{background:#e9efff;color:#304e9b;font-weight:800}
+.maati-notification-copy{min-width:0;flex:1}.maati-notification-title-row{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.maati-notification-copy h3{margin:0;color:#253b2b;font-size:13px;font-weight:750}.maati-notification-copy p{margin:5px 0 7px;color:#5e6d61;font-size:12px;line-height:1.5}
+.maati-notification-meta{font-size:10px;color:#78877b}.maati-unread-dot{width:7px;height:7px;border-radius:50%;background:#2f8750;flex-shrink:0}
+.maati-notification-item[data-unread="false"] .maati-unread-dot{display:none}
+.maati-notifications-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:13px;font-size:11px;color:#66766a}
+.maati-notifications-foot button{border:0;background:transparent;color:#267143;font-size:11px;font-weight:750;cursor:pointer;padding:6px}
+.maati-notifications-disclaimer{margin:12px 0 0;padding:9px 10px;border-radius:10px;background:#f6f6ef;color:#6e705d;font-size:10px;line-height:1.5}
+body.dark-mode .maati-notifications-panel{background:#202a22;color:#edf5ed;border-color:#405444}body.dark-mode .maati-notifications-head{border-color:#3b493d}body.dark-mode .maati-notifications-head h2,body.dark-mode .maati-notification-copy h3{color:#eef7ed}body.dark-mode .maati-notifications-head p:last-child,body.dark-mode .maati-notification-copy p,body.dark-mode .maati-notification-meta,body.dark-mode .maati-notifications-foot{color:#bac9bb}body.dark-mode .maati-notification-item{border-color:#39473b}body.dark-mode .maati-notification-item[data-unread="true"]{background:linear-gradient(90deg,#2a3c2c,transparent)}body.dark-mode .maati-notifications-close{background:#334536;color:#f1f8ef}body.dark-mode .maati-notifications-disclaimer{background:#30382c;color:#d5d9bd}
+@media(max-width:560px){.maati-notification-button{width:38px;padding:7px}.maati-notification-button-label{display:none}.maati-notifications-panel{top:74px;right:8px;padding:14px;max-height:78vh}}
+</style>
+<script id="maati-notifications-behavior">
+(function(){
+  function initMaatiNotifications(){
+    const toggle=document.getElementById('maatiNotificationsToggle');
+    const panel=document.getElementById('maatiNotificationsPanel');
+    const close=document.getElementById('maatiNotificationsClose');
+    const mark=document.getElementById('maatiMarkAllRead');
+    const badge=document.getElementById('maatiNotificationBadge');
+    const status=document.getElementById('maatiNotificationsStatus');
+    if(!toggle||!panel||toggle.dataset.bound==='true') return;
+    toggle.dataset.bound='true';
+    const items=Array.from(panel.querySelectorAll('.maati-notification-item'));
+    function updateUnread(){const count=items.filter(item=>item.dataset.unread==='true').length;badge.textContent=String(count);badge.hidden=count===0;status.textContent=count===0?'You are all caught up':count+' unread reminder'+(count===1?'':'s');}
+    function setOpen(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close notifications':'Open notifications');if(open){const first=panel.querySelector('button');if(first) first.focus({preventScroll:true});}}
+    toggle.addEventListener('click',()=>setOpen(panel.hidden));
+    close.addEventListener('click',()=>{setOpen(false);toggle.focus({preventScroll:true});});
+    mark.addEventListener('click',()=>{items.forEach(item=>item.dataset.unread='false');updateUnread();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){setOpen(false);toggle.focus({preventScroll:true});}});
+    document.addEventListener('click',event=>{if(!panel.hidden&&!panel.contains(event.target)&&!toggle.contains(event.target))setOpen(false);});
+    updateUnread();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initMaatiNotifications);else initMaatiNotifications();
+})();
+</script>
+
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased relative transition-colors duration-200"><aside aria-label="Main dashboard navigation" id="maatiSidebar">
+<div class="sidebar-brand"><div style="font-size:11px;font-weight:800;letter-spacing:.13em;color:#5f8068;text-transform:uppercase">Farmer workspace</div><div style="font-size:19px;font-weight:800;margin-top:4px">My Dashboard</div><div style="font-size:11px;opacity:.75;margin-top:3px">MandiAurMaati</div></div>
+<div class="sidebar-kicker">My account</div>
+<a href="#nav-profile"><span class="material-symbols-outlined">person</span>Profile &amp; farm details</a>
+<a href="#nav-field-notes"><span class="material-symbols-outlined">edit_note</span>Field notes &amp; records</a>
+<div class="sidebar-kicker">Crop marketplace</div>
+<a href="#nav-sell"><span class="material-symbols-outlined">add_box</span>Sell / add my stock</a>
+<a href="#nav-buy"><span class="material-symbols-outlined">shopping_bag</span>Buy crops</a>
+<a href="#nav-requests"><span class="material-symbols-outlined">receipt_long</span>Purchase requests</a>
+<a href="#nav-prices"><span class="material-symbols-outlined">trending_up</span>Crop prices notebook</a>
+<a href="#marketplaceHub"><span class="material-symbols-outlined">storefront</span>All marketplace listings</a>
+<div class="sidebar-kicker">Farm tools</div>
+<a href="#nav-profit"><span class="material-symbols-outlined">calculate</span>Cost &amp; profit calculator</a>
+<a href="#nav-soil"><span class="material-symbols-outlined">grass</span>Soil test notebook</a>
+<a href="#nav-guides"><span class="material-symbols-outlined">menu_book</span>Farming guides</a>
+<a href="#nav-community"><span class="material-symbols-outlined">forum</span>Community question</a>
+<a href="#nav-field-map"><span class="material-symbols-outlined">map</span>Field map &amp; monitoring</a>
+<div class="sidebar-note" style="margin:16px 8px 4px;padding:10px;border-radius:10px;background:#e3eee2;font-size:11px;line-height:1.45;color:#34563d"><strong>Prototype mode</strong><br/>Your entries are stored in this browser. Shared accounts and live prices need a backend.</div>
+</aside><button aria-controls="maatiSidebar" aria-expanded="false" id="maatiSidebarToggle" type="button"><span class="material-symbols-outlined" style="vertical-align:middle;margin-right:5px">dashboard</span>Dashboard</button>
+<!-- Toast Notification Float -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-2xl border border-outline/30" id="toastNotification">
+<span class="material-symbols-outlined text-primary-fixed" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Action completed successfully</span>
+</div>
+<header class="fixed top-0 w-full z-40 bg-primary-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="MandiAurMaati Official Logo" class="h-8 w-auto object-contain" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2247%22%20fill%3D%22%23f5f4d9%22%20stroke%3D%22%23d7e9b6%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M20%2068%20Q50%2082%2080%2068%20L80%2078%20Q50%2095%2020%2078Z%22%20fill%3D%22%239cbd57%22/%3E%3Cpath%20d%3D%22M25%2066%20Q28%2039%2050%2020%20Q72%2039%2075%2066%20Q50%2076%2025%2066Z%22%20fill%3D%22%2316784c%22/%3E%3Cpath%20d%3D%22M50%2024%20V67%20M50%2045%20Q35%2040%2032%2031%20M50%2054%20Q65%2047%2068%2036%22%20fill%3D%22none%22%20stroke%3D%22%23eaf2d1%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M25%2069%20Q50%2056%2075%2069%22%20fill%3D%22none%22%20stroke%3D%22%23e8b85a%22%20stroke-width%3D%223%22/%3E%3C/svg%3E"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight leading-tight">MandiAurMaati</span><span class="font-label-sm text-label-sm text-on-primary-container hidden sm:block">Farmers · Market · Better Tomorrow</span></div></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-secondary text-on-secondary rounded-lg font-label-md text-label-md"><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="landing-overview" href="#"><span class="material-symbols-outlined maati-top-icon">home</span><span class="maati-top-label">Landing Overview</span></a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="farmer-dashboard" href="#"><span class="material-symbols-outlined maati-top-icon">agriculture</span><span class="maati-top-label">Farmer Dashboard</span></a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="weather-intelligence" href="#"><span class="material-symbols-outlined maati-top-icon">cloud</span><span class="maati-top-label">Weather Intelligence</span></a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="soil-intelligence" href="#"><span class="material-symbols-outlined maati-top-icon">eco</span><span class="maati-top-label">Soil Intelligence</span></a><a class="px-space-sm py-space-xs transition-colors font-label-md text-label-md" data-path="kisan-sakha-voice-ai" href="#"><span class="material-symbols-outlined maati-top-icon">mic</span><span class="maati-top-label">Kisan Sakha</span></a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="kisan-chaupal-community" href="#"><span class="material-symbols-outlined maati-top-icon">groups</span><span class="maati-top-label">Kisan Chaupal</span></a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="mandi-marketplace" href="#"><span class="material-symbols-outlined maati-top-icon">storefront</span><span class="maati-top-label">Mandi Marketplace</span></a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center bg-surface-container-low/20 rounded-full px-space-sm py-space-xs gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed animate-pulse"></span><span class="font-label-sm text-label-sm text-on-primary">Online</span><span class="font-label-sm text-label-sm text-on-primary-container">• 2m ago</span></div><div class="relative inline-block"><select aria-label="Language Selector" class="appearance-none bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded-lg px-space-md py-space-xs pr-space-xl focus:outline-none cursor-pointer" id="headerLangSelect"><option selected="" value="hi">हिंदी (Hindi)</option><option value="pa">ਪੰਜਾਬੀ (Punjabi)</option><option value="bn">বাংলা (Bengali)</option><option value="mr">मराठी (Marathi)</option><option value="te">తెలుగు (Telugu)</option><option value="ta">தமிழ் (Tamil)</option><option value="gu">ગુજરાતી (Gujarati)</option><option value="kn">ಕನ್ನಡ (Kannada)</option><option value="en">English</option></select><span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none text-base">arrow_drop_down</span></div><button class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low/20 text-on-primary hover:bg-surface-container-low/30 hover:text-on-primary transition-colors font-label-sm text-label-sm" id="themeModeToggleBtn" type="button"><span class="material-symbols-outlined text-base text-tertiary-fixed" id="themeModeIcon">dark_mode</span><span id="themeModeLabel">Dark Mode</span></button><button class="hidden sm:flex items-center gap-space-xs bg-tertiary-fixed text-primary px-space-md py-space-xs rounded-lg font-label-md text-label-md hover:bg-tertiary-fixed-dim hover:text-primary transition-colors shadow-sm" id="headerMicQuickBtn" type="button"><span class="material-symbols-outlined text-base">mic</span><span>Talk to Kisan Sakha</span></button><div class="maati-notification-wrap">
+<button aria-label="Open notifications" aria-controls="maatiNotificationsPanel" aria-expanded="false" class="maati-notification-button" id="maatiNotificationsToggle" type="button">
+<span aria-hidden="true" class="material-symbols-outlined">notifications</span><span class="maati-notification-button-label">Notifications</span><span aria-hidden="true" class="maati-notification-badge" id="maatiNotificationBadge">3</span>
+</button>
+</div></div></div></div></header>
+<section aria-labelledby="maatiNotificationsTitle" aria-live="polite" class="maati-notifications-panel" hidden id="maatiNotificationsPanel" role="region">
+  <div class="maati-notifications-head"><div><p class="maati-notifications-eyebrow">FARM UPDATES</p><h2 id="maatiNotificationsTitle">Notifications</h2><p>Helpful reminders for your farm</p></div><button class="maati-notifications-close" id="maatiNotificationsClose" type="button" aria-label="Close notifications">×</button></div>
+  <div class="maati-notifications-list" id="maatiNotificationsList">
+    <article class="maati-notification-item" data-unread="true"><span class="maati-notification-icon weather">☀</span><div class="maati-notification-copy"><div class="maati-notification-title-row"><h3>Check today's weather</h3><span class="maati-unread-dot"></span></div><p>Review the local forecast before spraying, irrigating, or applying fertiliser.</p><span class="maati-notification-meta">Weather reminder · Demo notification</span></div></article>
+    <article class="maati-notification-item" data-unread="true"><span class="maati-notification-icon crops">🌾</span><div class="maati-notification-copy"><div class="maati-notification-title-row"><h3>Crop stock reminder</h3><span class="maati-unread-dot"></span></div><p>Check the quantity and asking price of crops you've listed for sale.</p><span class="maati-notification-meta">Marketplace · Demo notification</span></div></article>
+    <article class="maati-notification-item" data-unread="true"><span class="maati-notification-icon market">₹</span><div class="maati-notification-copy"><div class="maati-notification-title-row"><h3>Review mandi prices</h3><span class="maati-unread-dot"></span></div><p>Compare your saved price notes with a verified local mandi source before selling.</p><span class="maati-notification-meta">Market reminder · Demo notification</span></div></article>
+  </div>
+  <div class="maati-notifications-foot"><span id="maatiNotificationsStatus">3 unread reminders</span><button id="maatiMarkAllRead" type="button">Mark all as read</button></div>
+  <p class="maati-notifications-disclaimer">These are sample reminders, not live alerts. Real weather forecasts, mandi prices, and buyer updates need a connected data source or backend.</p>
+</section>
+<main class="w-full pt-20 bg-surface"><div class="mx-gutter-mobile md:mx-gutter-desktop mt-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950" role="status"><strong>Frontend preview:</strong> Chat replies, weather, soil, and mandi figures are demo content until a backend/data source is connected. Do not use demo values for farm decisions.</div><div class="flex flex-col w-full">
+<!-- Top Ambient Banner & Farm Telemetry Bridge -->
+<div class="w-full bg-surface-container-low px-gutter-desktop py-space-sm shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-secondary-fixed text-primary">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">eco</span>
+</span>
+<span class="font-label-md text-label-md">🌾 Farm Sync Active:</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Demo plot • Sample crop data only • Live sensors and forecast not connected</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+<span class="font-label-sm text-label-sm text-on-surface">Regional HD Audio Voice: ON</span>
+</div>
+<span class="px-space-xs py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+          Frontend Preview (Backend Not Connected)
+        </span>
+</div>
+</div>
+</div>
+<!-- Primary Header & Multilingual Language Selector -->
+<div class="w-full px-gutter-desktop pt-space-lg pb-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider">AI Voice Companion</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">● Live Multilingual Agronomist</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1" id="mainTitleHeading">
+          Kisan Sakha <span class="text-secondary font-normal" id="mainTitleSub">किसान सखा</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl" id="heroDescText">
+          Your 24/7 spoken-first agricultural companion. Ask questions in your native dialect regarding crop health, erratic weather, mandi rates, and precision spray windows.
+        </p>
+</div>
+<!-- Quick Audio Setting Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-xs p-space-xs bg-surface-container rounded-xl shadow-sm">
+<button class="flex items-center gap-1.5 px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors text-left" id="toggleAccentBtn" title="Click to cycle spoken dialect">
+<span class="material-symbols-outlined text-secondary text-base">record_voice_over</span>
+<span>Accent: <strong class="text-secondary font-bold" id="accentLabel">Haryanvi-Hindi</strong></span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" id="toggleTtsSpeed" title="Click to change playback speed" type="button">
+          Speed: <strong class="text-primary font-label-sm text-label-sm" id="speedDisplay">1.0x</strong>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-space-sm py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-primary-container transition-all" id="outdoorAudioBtn" type="button">
+<span class="material-symbols-outlined text-base">hearing</span>
+<span id="tractorModeText">Loud Tractor Mode</span>
+</button>
+</div>
+</div>
+<!-- 9-Language Regional Selector -->
+<div class="mt-space-md pt-space-xs overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-space-xs min-w-max pb-1" id="languagePillsGroup">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-space-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-secondary">translate</span> Dialect:
+</span>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-primary-container text-tertiary-fixed font-label-sm text-label-sm shadow-sm flex items-center gap-1 transition-all" data-lang="hi" type="button">
+<span class="indicator-dot w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span>हिंदी (Hindi)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="pa" type="button">
+<span>ਪੰਜਾਬੀ (Punjabi)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="bn" type="button">
+<span>বাংলা (Bengali)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="mr" type="button">
+<span>मराठी (Marathi)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="te" type="button">
+<span>తెలుగు (Telugu)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="ta" type="button">
+<span>தமிழ் (Tamil)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="gu" type="button">
+<span>ગુજરાતી (Gujarati)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="kn" type="button">
+<span>ಕನ್ನಡ (Kannada)</span>
+</button>
+<button class="lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" data-lang="en" type="button">
+<span>English</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Grid Workspace -->
+<div class="w-full px-gutter-desktop pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Center & Left: Active Voice Chat & Central Interactive Well (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Central Tactile Voice Interaction Hub -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-container via-primary to-primary-container p-space-lg shadow-xl text-on-primary high-contrast-card">
+<!-- Background Ambient Glow & Contour Ring -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-tertiary-fixed/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-secondary-fixed/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="flex items-center gap-2 mb-space-sm bg-surface-container-lowest/10 backdrop-blur-md px-space-md py-1 rounded-full">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-semibold" id="hubNetworkPill">Microphone Ready • 4G Rural Low-Latency Engine</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-primary tracking-tight max-w-xl" id="hubHeadline">
+              Tap &amp; Speak Naturally in your local dialect
+</h2>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1" id="hubSubprompt">
+              "बोलने के लिए माइक दबाएं — सवाल पूछें जैसे 'मेरी गेहूं में क्या छिड़कें?'"
+</p>
+<!-- Massive Tactile Mic Button & Sonic Halo Waves -->
+<div class="relative my-space-lg flex items-center justify-center">
+<!-- Animated Concentric Rings -->
+<div class="absolute w-36 h-36 rounded-full bg-tertiary-fixed/20 animate-pulse transition-all" id="micHalo1"></div>
+<div class="absolute w-48 h-48 rounded-full bg-secondary-fixed/10 animate-ping opacity-75 duration-1000 transition-all" id="micHalo2"></div>
+<button aria-label="Tap to speak" class="relative z-10 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-tertiary-fixed text-primary flex flex-col items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-200 focus:outline-none ring-4 ring-tertiary-fixed/40" id="voiceMicTrigger" type="button">
+<span class="material-symbols-outlined text-4xl sm:text-5xl" id="micStateIcon" style="font-variation-settings: 'FILL' 1;">mic</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase mt-1 font-bold" id="micButtonText">बोलें</span>
+</button>
+</div>
+<!-- Real-time Animated Waveform Simulation -->
+<div class="w-full max-w-md bg-surface-container-lowest/15 backdrop-blur-md rounded-xl p-space-md flex flex-col items-center gap-2 border border-white/10">
+<div class="flex items-center justify-between w-full text-on-primary-container font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed">graphic_eq</span>
+<span id="spectrumLabel">Voice Level / आवाज़ स्पेक्ट्रम</span>
+</span>
+<span class="text-tertiary-fixed font-semibold" id="listeningStatusText">Ready to listen</span>
+</div>
+<!-- Animated Bars -->
+<div class="flex items-end justify-center gap-1.5 h-10 w-full py-1" id="waveformBarContainer">
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-3 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-5 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-8 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-4 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-9 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-6 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-secondary-fixed h-10 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-secondary-fixed h-7 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-4 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-8 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-3 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-6 transition-all duration-150"></div>
+<div class="w-1.5 rounded-full bg-tertiary-fixed h-2 transition-all duration-150"></div>
+</div>
+<div class="text-on-primary-container font-body-sm text-body-sm italic w-full text-center truncate" id="listeningKeywordsPrompt">
+                "Listening for: गेहूं, खाद, मौसम, पानी, मंडी भाव..."
+              </div>
+</div>
+</div>
+</div>
+<!-- Quick Agronomy Voice Prompts Carousel -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">psychology_alt</span>
+<span id="faqHeaderTitle">Frequently Asked in Karnal Today (अक्सर पूछे जाने वाले सवाल)</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary">Swipe left →</span>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto no-scrollbar py-1" id="frequentlyAskedContainer">
+<button class="prompt-chip shrink-0 flex items-center gap-2 px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left shadow-sm group active:scale-95" data-query="कल बारिश होगी? क्या छिड़काव रोक दें?" type="button">
+<span class="material-symbols-outlined text-secondary text-lg group-hover:scale-110 transition-transform">rainy</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">कल बारिश होगी?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Will it rain tomorrow?</span>
+</div>
+</button>
+<button class="prompt-chip shrink-0 flex items-center gap-2 px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left shadow-sm group active:scale-95" data-query="आज गेहूं में पानी देना चाहिए या नहीं?" type="button">
+<span class="material-symbols-outlined text-secondary text-lg group-hover:scale-110 transition-transform">water_drop</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">आज पानी देना चाहिए?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Irrigate wheat today?</span>
+</div>
+</button>
+<button class="prompt-chip shrink-0 flex items-center gap-2 px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left shadow-sm group active:scale-95" data-query="करनाल मंडी में आज शरबती गेहूं का उच्चतम भाव क्या है?" type="button">
+<span class="material-symbols-outlined text-secondary text-lg group-hover:scale-110 transition-transform">payments</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">करनाल मंडी में गेहूं भाव?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Wheat APMC price</span>
+</div>
+</button>
+<button class="prompt-chip shrink-0 flex items-center gap-2 px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left shadow-sm group active:scale-95" data-query="गेहूं की 64 दिन की फसल में दूसरा यूरिया और जिंक कब डालें?" type="button">
+<span class="material-symbols-outlined text-secondary text-lg group-hover:scale-110 transition-transform">science</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">दूसरा यूरिया कब डालें?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">2nd Urea Top Dressing</span>
+</div>
+</button>
+<button class="prompt-chip shrink-0 flex items-center gap-2 px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left shadow-sm group active:scale-95" data-query="गेहूं में दीमक और तना छेदक का जैविक नियंत्रण कैसे करें?" type="button">
+<span class="material-symbols-outlined text-secondary text-lg group-hover:scale-110 transition-transform">bug_report</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">दीमक का जैविक इलाज?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Bio-control for termites</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Rich Conversation Stream / Live Dialog -->
+<div class="flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-outline-variant/30 high-contrast-card" id="conversationArea">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-bold" id="consultationStreamTitle">Active Agronomic Consultation (सक्रिय संवाद)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-primary hover:bg-surface-container-high transition-colors flex items-center gap-1 active:scale-95" id="shareAdviceBtn" type="button">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share Advice</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-primary hover:bg-surface-container-high transition-colors flex items-center gap-1 active:scale-95" id="saveAdviceBtn" type="button">
+<span class="material-symbols-outlined text-sm" id="saveIcon">bookmark</span>
+<span id="saveBtnText">Save</span>
+</button>
+</div>
+</div>
+<!-- Messages Container -->
+<div class="flex flex-col gap-space-md" id="messagesFeed">
+<!-- Farmer Query Bubble (Right-aligned / Farmer Card) -->
+<div class="flex flex-col items-end gap-1 max-w-2xl self-end user-bubble">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-secondary">mic</span>
+<span id="queryMetaText">Spoken in Punjabi-Hindi Mix • 10:42 AM</span>
+<span class="font-semibold text-primary">Sardar Gurpreet Singh</span>
+</div>
+<div class="p-space-md rounded-2xl rounded-tr-xs bg-surface-container text-on-surface shadow-sm border border-surface-container-highest">
+<p class="font-body-md text-body-md font-semibold text-primary" id="farmerQueryPrimary">
+                "मेरी गेहूं की फसल में पत्तों पर पीले धब्बे दिख रहे हैं, और कल बारिश का अनुमान है। मुझे क्या करना चाहिए?"
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="farmerQuerySub">
+                "Yellow spots appearing on my wheat leaves, and rain is predicted tomorrow. What should I do?"
+              </p>
+<div class="mt-2 pt-2 border-t border-surface-container-highest flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-secondary">done_all</span>
+<span id="transcriptionConfidence">Transcribed with 99.4% Agri-Acoustic Confidence</span>
+</div>
+</div>
+</div>
+<!-- Kisan Sakha Response Card (Left-aligned / Deep Guidance) -->
+<div class="flex flex-col items-start gap-1 max-w-3xl self-start w-full assistant-bubble">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-tertiary-fixed font-bold text-xs">
+                KS
+              </span>
+<span class="font-semibold text-primary">Kisan Sakha AI</span>
+<span id="assistantRulesetTag">• Demo content — not connected to ICAR data</span>
+</div>
+<div class="w-full p-space-lg rounded-2xl rounded-tl-xs bg-surface-container-low shadow-sm flex flex-col gap-space-md border border-surface-container">
+<!-- Audio Player Bar -->
+<div class="w-full p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm border border-surface-container-high">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button aria-label="Play advice audio" class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center hover:bg-primary transition-all shadow-sm active:scale-95" id="audioPlayToggle" type="button">
+<span class="material-symbols-outlined text-2xl" id="audioPlayIcon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold" id="listenAudioTitle">Listen in Hindi (ऑडियो सुनें)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="listenAudioMeta">Duration: 0:42 • Native Voice Synthesis</span>
+</div>
+</div>
+<!-- Dynamic progress bar -->
+<div class="flex items-center gap-space-sm w-full sm:w-64">
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden relative cursor-pointer" id="audioProgressBarContainer">
+<div class="bg-secondary h-full rounded-full transition-all duration-200" id="audioProgressBar" style="width: 40%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap" id="audioTimerText">0:17 / 0:42</span>
+</div>
+</div>
+<!-- Diagnosis Alert Box -->
+<div class="p-space-md rounded-xl bg-error-container text-on-error-container flex items-start gap-space-sm border border-error/20">
+<span class="material-symbols-outlined text-2xl mt-0.5 shrink-0 text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-error-container" id="diagnosisTitle">उदाहरण निदान कार्ड (वास्तविक निदान नहीं)</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm">High Urgency</span>
+</div>
+<p class="font-body-sm text-body-sm mt-1" id="diagnosisDescription">
+                    Sample text only. No live weather or crop image analysis is connected; this is not a confirmed diagnosis.
+                  </p>
+</div>
+</div>
+<!-- Photo Comparison Preview Slot -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold" id="photoMatchHeading">Matched Symptom (ICAR Archive)</span>
+<div class="relative h-36 rounded-xl overflow-hidden shadow-sm border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Close up macroscopic high resolution photograph of wheat leaves affected by early yellow stripe rust Puccinia striiformis showing characteristic bright yellow powdery pustules forming parallel lines along leaf veins against natural green field backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnapMu_txQaJbFddHej8nd2bxlT0OHKJtZIVSWDeBGZFLFrgE_3tvwBjFLUTiJf6H1jg3aWWdul_jLx8_pIEHLjSWi_fYTUGoN-b9W9JjqzfXwuEiE-IWyKssbu722er2OrblCRzzIXB4by-D2CZaDjxbudjaW4rW16yM3CDZJzt3IERpGFq9Nn_zxXwVHC9XtExf2uWfkDogtLd54sx8TAyOBTUG4gkBTdnxBq6XRlq566ZQqp7TRMg"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary/90 backdrop-blur-sm text-on-primary font-label-sm text-label-sm shadow-sm">
+                      Puccinia striiformis (94% match)
+                    </div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Imminent Weather Risk Window</span>
+<div class="h-36 rounded-xl bg-surface-container-lowest p-space-sm flex flex-col justify-between shadow-sm border border-surface-container">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Western Disturbance Rain</span>
+<span class="material-symbols-outlined text-secondary">thunderstorm</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">-- mm</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">Rain Expected in 28h</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                      Chemical sprays applied now will wash off into soil with zero efficacy.
+                    </div>
+</div>
+</div>
+</div>
+<!-- Clear 3-Step Action Plan -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2" id="actionPlanTitle">
+<span class="material-symbols-outlined text-secondary">task_alt</span>
+                  Immediate 3-Step Action Plan (तुरंत करने योग्य कार्य)
+                </h3>
+<button class="px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm hover:bg-secondary hover:text-white transition-colors flex items-center gap-1 active:scale-95" id="markAppliedBtn" type="button">
+<span class="material-symbols-outlined text-sm">done_outline</span>
+<span>Acknowledge &amp; Mark Applied</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<!-- Step 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm border border-surface-container">
+<span class="w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">1</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold" id="step1Title">वर्षा से पहले कवकनाशी (Fungicide) का छिड़काव बिल्कुल न करें</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="step1Desc">
+                        Do not spray today. High wind (18 km/h) and predicted rain will wash away chemical solutions, wasting input costs.
+                      </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm border border-surface-container">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">2</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold" id="step2Title">खेत की नालियों की सफाई व जल निकासी सुनिश्चित करें</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="step2Desc">
+                        Ensure field drains are clear. Standing rainwater creates stagnant waterlogging which accelerates fungal sporulation across wheat rows.
+                      </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm border border-surface-container">
+<span class="w-7 h-7 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">3</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold" id="step3Title">फसल सुरक्षा उपचार से पहले स्थानीय कृषि विशेषज्ञ से पुष्टि करें</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="step3Desc">
+                        Dose: <strong>200 ml प्रति एकड़</strong> 200 लीटर पानी में मिलाकर। छिड़काव हमेशा दोपहर बाद खिली धूप में करें।
+                      </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggested Spoken Follow-ups -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" id="suggestedFollowupTitle">Suggested Follow-Up Voice Queries (आगे क्या पूछें):</span>
+<div class="flex flex-wrap gap-space-xs" id="followUpPillsContainer">
+<button class="follow-up-pill px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm shadow-sm transition-colors flex items-center gap-1.5 active:scale-95" data-query="प्रोपिकोनाज़ोल की अनुमानित कीमत क्या है और 5 एकड़ के लिए कितना खर्च आएगा?" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">help_outline</span>
+<span id="followup1">प्रोपिकोनाज़ोल की अनुमानित कीमत क्या है? (Estimated Price)</span>
+</button>
+<button class="follow-up-pill px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm shadow-sm transition-colors flex items-center gap-1.5 active:scale-95" data-query="करनाल में निकटतम प्रमाणित कृषि सेवा केंद्र (IFFCO/KVK) कहाँ है?" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">storefront</span>
+<span id="followup2">करनाल में निकटतम प्रमाणित कृषि सेवा केंद्र कहाँ है?</span>
+</button>
+<button class="follow-up-pill px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm shadow-sm transition-colors flex items-center gap-1.5 active:scale-95" data-query="क्या पीला रतुआ हवा के साथ पड़ोस के खेतों में भी फैल सकता है?" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">coronavirus</span>
+<span id="followup3">क्या यह बीमारी पड़ोस के खेतों में भी फैल सकती है?</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Text Query Input Bar (Fallback when not using Voice) -->
+<form class="mt-space-md pt-space-sm flex items-center gap-space-sm" id="queryForm" onsubmit="return false;">
+<div class="relative flex-1">
+<input class="w-full h-12 pl-space-md pr-12 rounded-xl bg-surface-container text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm border border-outline-variant/40" id="userQueryInput" placeholder="Or type your query in Hindi, Punjabi or English..." type="text"/>
+<button aria-label="Upload leaf photo" class="absolute right-3 top-2.5 text-on-surface-variant hover:text-secondary transition-colors" id="uploadPhotoBtn" title="Attach crop photo for AI scan" type="button">
+<span class="material-symbols-outlined text-2xl">add_photo_alternate</span>
+</button>
+</div>
+<button class="h-12 px-space-lg rounded-xl bg-secondary text-on-secondary hover:bg-primary-container transition-all flex items-center gap-2 font-label-md text-label-md shadow-md active:scale-95" id="sendQueryBtn" type="button">
+<span class="material-symbols-outlined">send</span>
+<span class="hidden sm:inline" id="sendBtnLabel">Send Query</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Right Column: Farm Data Context & Telemetry Inspection (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Personalized Field Data Anchor Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md border border-outline-variant/30 high-contrast-card">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">pin_drop</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Field Context Engine</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-primary font-label-sm text-label-sm font-semibold">
+              Plot 4 Connected
+            </span>
+</div>
+<!-- Micro Map Snippet -->
+<div class="w-full h-36 rounded-xl bg-cover bg-center relative shadow-sm overflow-hidden" data-location="Karnal, Haryana, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEFUj3h7BcVEaBbvnmz7IRCP6KnQ4lD7L-4C9hXNT6UAuWkDjot7zNrUl0fEQQNO0xICSb_0zofIMJbHQhW6xNaPwOLt3P9Hplc1Z7KL6KmZCQuTYjJ_ifXbb-mMHfos608ejOoocP7mnXjvmimg2q-PPOTbjLR_np4ehygcSd4QoIkmvfRV7maTQKN4SgYyu9ws-ToH2TMTcQMSpthi4R6lDqeIndFV_vbaex2yLMGhISDIdWqEWyAQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent rounded-xl flex items-end p-space-sm">
+<div class="text-on-primary">
+<span class="font-label-sm text-label-sm block opacity-90">Sub-district: Nilokheri • 7.5 Acres</span>
+<span class="font-headline-sm text-headline-sm font-bold">Karnal, Haryana</span>
+</div>
+</div>
+</div>
+<!-- Live Agronomic Telemetry Wells -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soil Moisture (0-20cm)</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary mt-0.5">Demo</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container mt-1">Sufficient / पर्याप्त</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ambient Humidity</span>
+<span class="font-headline-md text-headline-md font-bold text-primary mt-0.5">82%</span>
+<span class="font-label-sm text-label-sm text-error font-semibold mt-1">High (Spore Risk)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wheat Phenology</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5 font-bold">Day 64</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Late Tillering Stage</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soil pH Level</span>
+<span class="font-headline-md text-headline-md font-bold text-primary mt-0.5">7.2</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold mt-1">Optimal Neutral</span>
+</div>
+</div>
+<!-- Active Agronomic Alerts for Karnal Belt -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">campaign</span>
+              District Advisory Highlights (कृषि विज्ञान केंद्र):
+            </span>
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 text-on-surface font-body-sm text-body-sm flex items-start gap-2 border border-surface-container-highest">
+<span class="material-symbols-outlined text-base text-secondary shrink-0 mt-0.5">check_circle</span>
+<span>Sample community update — not verified. Live KVK/community feeds are not connected.</span>
+</div>
+</div>
+</div>
+<!-- Live Mandi Rates for Plot's Main Crop -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm border border-outline-variant/30 high-contrast-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">store</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">APMC Mandi Ticker</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today's Modal</span>
+</div>
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div>
+<span class="font-label-md text-label-md text-primary block font-semibold">Karnal Mandi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sharbati Wheat • 6 km</span>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-primary font-bold">₹2,385 /Q</span>
+<span class="font-label-sm text-label-sm text-secondary block font-semibold">+₹40 (▲ 1.7%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div>
+<span class="font-label-md text-label-md text-primary block font-semibold">Taraori APMC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sharbati Wheat • 14 km</span>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-primary font-bold">Live data N/A</span>
+<span class="font-label-sm text-label-sm text-secondary block font-semibold">+₹65 (▲ 2.8%)</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors text-center active:scale-95 font-semibold" id="askMandiBtn" type="button">
+            Ask Sakha: "कहाँ बेचना सबसे फायदेमंद रहेगा?"
+          </button>
+</div>
+<!-- Voice AI Model Diagnostics & Safe-Use Notice -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-sm flex flex-col gap-space-xs text-on-surface-variant border border-surface-container">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-base text-secondary">verified_user</span>
+            Agronomic Reliability Guarantee
+          </div>
+<p class="font-body-sm text-body-sm">
+            यह फ्रंटएंड प्रीव्यू है। कोई AI, मौसम, मंडी या ICAR डेटा स्रोत अभी कनेक्ट नहीं है। खेती से जुड़े निर्णय लेने से पहले आधिकारिक स्रोत से पुष्टि करें।
+          </p>
+<div class="mt-space-xs pt-space-xs flex items-center justify-between text-[11px] font-label-sm text-label-sm text-on-surface-variant border-t border-surface-container-high">
+<span id="latencyTag">Latency: 280ms • 2G Optimized</span>
+<span id="audioModelTag">Audio Model: AgriTTS-V2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<section aria-labelledby="toolsHeading" class="maati-tools" id="maatiTools">
+<div class="maati-wrap">
+<div class="maati-heading-row"><div><p class="maati-eyebrow">YOUR FARM, ONE PLACE</p><h2 id="toolsHeading">MandiAurMaati Farm Hub</h2><p class="maati-muted">A working frontend workspace. Live data and cloud sync will be connected in the backend phase.</p></div><span class="maati-demo-badge">Frontend mode · local storage</span></div>
+<div class="maati-grid maati-grid-3">
+<article class="maati-card" id="nav-profile"><div class="maati-card-icon">🌾</div><h3>Farm profile</h3><p class="maati-muted">Set your farm details so future advice can be personalized.</p>
+<form class="maati-form" id="farmProfileForm"><label>Farmer name<input id="farmName" maxlength="80" placeholder="Your name"/></label><label>Village / district<input id="farmLocation" maxlength="120" placeholder="Village, district, state"/></label><label>Preferred language<select id="farmLanguage"><option value="hi">Hindi</option><option value="pa">Punjabi</option><option value="en">English</option><option value="bn">Bengali</option><option value="mr">Marathi</option><option value="gu">Gujarati</option><option value="te">Telugu</option><option value="ta">Tamil</option><option value="kn">Kannada</option></select></label><label>Total farm area<input id="farmArea" max="100000" min="0" placeholder="Acres" step="0.1" type="number"/></label><label>Main crop<input id="farmCrop" maxlength="80" placeholder="e.g. Wheat"/></label><button class="maati-btn" type="submit">Save farm profile</button></form><p class="maati-status" id="farmProfileStatus" role="status"></p></article>
+<article class="maati-card" id="nav-field-notes"><div class="maati-card-icon">🌦️</div><h3>Weather &amp; field notes</h3><p class="maati-muted">Add a note for your farm. Forecasts will be connected later; no live weather is shown here.</p><form class="maati-form" id="fieldNoteForm"><label>Note type<select id="fieldNoteType"><option>Irrigation</option><option>Rain / weather</option><option>Crop observation</option><option>Soil observation</option><option>Other</option></select></label><label>Note<textarea id="fieldNoteText" maxlength="600" placeholder="What did you observe in the field?" required="" rows="3"></textarea></label><button class="maati-btn" type="submit">Save field note</button></form><div aria-live="polite" class="maati-list" id="fieldNotesList"></div></article>
+<article class="maati-card"><div class="maati-card-icon">📈</div><h3>Mandi price comparison</h3><p class="maati-demo-note">Sample values only — not current market prices.</p><div class="maati-form"><label>Crop<select id="mandiCrop"><option>Wheat</option><option>Paddy</option><option>Mustard</option><option>Maize</option><option>Cotton</option></select></label><label>Market / district<input id="mandiLocation" maxlength="100" placeholder="Enter market or district"/></label><button class="maati-btn" id="mandiSearchBtn" type="button">Show sample comparison</button></div><div aria-live="polite" class="maati-results" id="mandiResults"><p class="maati-muted">Choose a crop to see clearly labelled example data.</p></div></article>
+</div>
+<div class="maati-grid maati-grid-2 maati-section-gap">
+<article class="maati-card"><div class="maati-card-icon">🗓️</div><h3>Crop calendar &amp; task planner</h3><p class="maati-muted">Record your own reminders. These are personal notes, not automatic agronomic recommendations.</p><form class="maati-form maati-task-form" id="taskForm"><label>Task<input id="taskTitle" maxlength="120" placeholder="e.g. Check irrigation channel" required=""/></label><label>Crop<input id="taskCrop" maxlength="80" placeholder="Crop (optional)"/></label><label>Due date<input id="taskDate" required="" type="date"/></label><button class="maati-btn" type="submit">Add task</button></form><div aria-live="polite" class="maati-list" id="taskList"></div></article>
+<article class="maati-card" id="nav-profit"><div class="maati-card-icon">🧮</div><h3>Farm cost &amp; profit calculator</h3><p class="maati-muted">Estimate your numbers. Results depend on the values you enter; this is not a guaranteed yield or profit forecast.</p><form class="maati-form maati-calc-grid" id="profitForm"><label>Area (acres)<input id="calcArea" min="0" required="" step="0.01" type="number" value="1"/></label><label>Yield per acre (quintals)<input id="calcYield" min="0" required="" step="0.1" type="number" value="18"/></label><label>Selling price per quintal (₹)<input id="calcPrice" min="0" required="" step="1" type="number" value="2200"/></label><label>Total input costs (₹)<input id="calcInputs" min="0" required="" step="1" type="number" value="12000"/></label><label>Labour / machinery (₹)<input id="calcLabour" min="0" required="" step="1" type="number" value="4000"/></label><label>Transport / other (₹)<input id="calcOther" min="0" required="" step="1" type="number" value="1500"/></label><button class="maati-btn" type="submit">Calculate estimate</button></form><div aria-live="polite" class="maati-result-panel" id="profitResult">Enter your own figures and calculate.</div></article>
+</div>
+<div class="maati-grid maati-grid-3 maati-section-gap">
+<article class="maati-card" id="nav-soil"><div class="maati-card-icon">🧪</div><h3>Soil-test notebook</h3><p class="maati-muted">Store measurements from a real soil-test report. Do not guess values.</p><form class="maati-form" id="soilForm"><label>Test date<input id="soilDate" required="" type="date"/></label><label>Soil pH<input id="soilPh" max="14" min="0" placeholder="e.g. 7.2" step="0.1" type="number"/></label><label>N / P / K notes<input id="soilNpk" maxlength="150" placeholder="Use lab report units"/></label><label>Other notes<textarea id="soilNotes" maxlength="400" placeholder="Lab, field, recommendations... " rows="2"></textarea></label><button class="maati-btn" type="submit">Save soil record</button></form><div aria-live="polite" class="maati-list" id="soilList"></div></article>
+<article class="maati-card" id="nav-guides"><div class="maati-card-icon">📚</div><h3>Farming knowledge library</h3><p class="maati-muted">Search topics for a checklist. Verify crop-specific decisions with local agricultural experts.</p><label class="maati-search-label">Search guides<input id="guideSearch" placeholder="Try soil test, irrigation, storage..." type="search"/></label><div class="maati-list" id="guideResults"></div><p class="maati-small">Useful starting point: <a href="https://icar.org.in/" rel="noopener noreferrer" target="_blank">ICAR official website</a>.</p></article>
+<article class="maati-card"><div class="maati-card-icon">🏛️</div><h3>Official schemes &amp; services</h3><p class="maati-muted">Use official sources to check current eligibility, dates, and application requirements.</p><div class="maati-link-list"><a href="https://pmkisan.gov.in/" rel="noopener noreferrer" target="_blank">PM-KISAN official portal ↗</a><a href="https://pmfby.gov.in/" rel="noopener noreferrer" target="_blank">Pradhan Mantri Fasal Bima Yojana ↗</a><a href="https://soilhealth.dac.gov.in/" rel="noopener noreferrer" target="_blank">Soil Health Card portal ↗</a><a href="https://agmarknet.gov.in/" rel="noopener noreferrer" target="_blank">AGMARKNET market information ↗</a><a href="https://mkisan.gov.in/" rel="noopener noreferrer" target="_blank">mKisan services ↗</a></div><p class="maati-small">This page does not verify live scheme status or guarantee eligibility.</p></article>
+</div>
+<div class="maati-grid maati-grid-2 maati-section-gap">
+<article class="maati-card" id="nav-community"><div class="maati-card-icon">💬</div><h3>Community question draft</h3><p class="maati-muted">Prepare a question to share with a local farmer group or agricultural expert. This frontend does not publish it online.</p><form class="maati-form" id="communityForm"><label>Topic<input id="communityTopic" maxlength="100" placeholder="e.g. Wheat irrigation timing" required=""/></label><label>Question<textarea id="communityQuestion" maxlength="1200" placeholder="Describe crop, location, stage, and what you observed..." required="" rows="3"></textarea></label><button class="maati-btn" type="submit">Prepare shareable question</button></form><div class="maati-result-panel" hidden="" id="communityDraft"></div></article>
+<article class="maati-card"><div class="maati-card-icon">⚙️</div><h3>Accessibility &amp; data controls</h3><p class="maati-muted">Adjust readability and manage locally stored demo records on this device.</p><div class="maati-form"><label class="maati-inline-check"><input id="largeTextToggle" type="checkbox"/> Larger text</label><label class="maati-inline-check"><input id="reduceMotionToggle" type="checkbox"/> Reduce animations</label><label class="maati-inline-check"><input id="offlineModeToggle" type="checkbox"/> Low-data mode (reduces visual effects)</label><button class="maati-btn maati-btn-secondary" id="exportDataBtn" type="button">Export my local data (JSON)</button><button class="maati-btn maati-btn-danger" id="clearDataBtn" type="button">Clear local demo data</button><p class="maati-small">Data is stored in this browser only. It is not backed up or synced across devices.</p><p class="maati-status" id="settingsStatus" role="status"></p></div></article>
+</div>
+<section aria-labelledby="marketplaceHeading" class="maati-tools" id="marketplaceHub">
+<div class="maati-wrap">
+<div class="maati-heading-row"><div><p class="maati-eyebrow">BUY &amp; SELL CROPS</p><h2 id="marketplaceHeading">MandiAurMaati Crop Marketplace</h2><p class="maati-muted">Create listings, manage stock, save purchase requests, and record prices you verify.</p></div><span class="maati-demo-badge">Shared listings · seller tools in progress</span></div>
+<div class="marketplace-warning" role="note"><strong>Marketplace status:</strong> Available listings are loaded from the backend when the API is running. New listings, purchase requests, stock edits, and price notes still use this browser only until secure sign-in and server write endpoints are added. Live mandi prices and online buyer/seller notifications are not connected. Do not treat user-entered prices as official market prices.</div>
+<div class="maati-grid maati-grid-2 maati-section-gap">
+<article class="maati-card" id="nav-sell"><div class="maati-card-icon">🌾</div><h3>List your crop for sale</h3><p class="maati-muted">Add your own crop, stock quantity, asking price, location, and contact information.</p>
+<form class="maati-form" id="marketListingForm">
+<label>Crop category<select id="listingCategory"><option selected="" value="">Choose category (auto-detected for listed crops)</option><option value="Cereals &amp; grains">Cereals &amp; grains</option><option value="Pulses &amp; legumes">Pulses &amp; legumes</option><option value="Oilseeds">Oilseeds</option><option value="Vegetables">Vegetables</option><option value="Fruits">Fruits</option><option value="Spices &amp; condiments">Spices &amp; condiments</option><option value="Plantation crops">Plantation crops</option><option value="Fodder crops">Fodder crops</option><option value="Flowers">Flowers</option><option value="Medicinal &amp; aromatic">Medicinal &amp; aromatic</option><option value="Nuts &amp; dry fruits">Nuts &amp; dry fruits</option><option value="Seeds &amp; planting material">Seeds &amp; planting material</option><option value="Other agricultural produce">Other agricultural produce</option></select></label>
+<label>Crop name<input autocomplete="off" id="listingCrop" list="cropSuggestions" maxlength="80" placeholder="Start typing: wheat, tomato, potato…" required=""/><datalist id="cropSuggestions"></datalist><small class="maati-small">Type a crop name to see suggestions across cereals, pulses, vegetables, fruits, spices and more. You can still enter a crop not in the list.</small></label>
+<label>Seller / farm name<input id="listingSeller" maxlength="100" placeholder="Your name or farm name" required=""/></label>
+<label>Seller type<select id="listingSellerType"><option>Farmer</option><option>Trader</option><option>Producer group / FPO</option></select></label>
+<label>Village / district / state<input id="listingLocation" maxlength="140" placeholder="Village, district, Punjab" required=""/></label>
+<div class="market-inline-fields"><label>Quantity available<input id="listingQuantity" min="0.01" placeholder="e.g. 25" required="" step="0.01" type="number"/></label><label>Unit<select id="listingUnit"><option value="quintals">Quintals</option><option value="kg">Kilograms</option><option value="tonnes">Tonnes</option></select></label></div>
+<label>Asking price (₹ per quintal)<input id="listingPrice" min="0" placeholder="Your asking price" required="" step="0.01" type="number"/></label>
+<label>Quality / grade (optional)<input id="listingQuality" maxlength="100" placeholder="e.g. moisture/grade if tested"/></label>
+<label>Crop details (optional)<textarea id="listingNotes" maxlength="500" placeholder="Harvest date, quantity lot, pickup terms…" rows="2"></textarea></label>
+<label>Contact phone (optional)<input id="listingContact" maxlength="60" placeholder="Only add a number you want buyers to call" type="tel"/></label>
+<p class="maati-small">Optional coordinates enable a straight-line distance estimate. Do not enter a private home address if you do not want it shared.</p>
+<div class="market-inline-fields"><label>Latitude<input id="listingLat" max="90" min="-90" placeholder="Optional" step="any" type="number"/></label><label>Longitude<input id="listingLon" max="180" min="-180" placeholder="Optional" step="any" type="number"/></label></div>
+<button class="maati-btn" type="submit">Add crop listing</button>
+</form>
+</article>
+<article class="maati-card" id="nav-buy"><div class="maati-card-icon">🛒</div><h3>Find crops and contact sellers</h3><p class="maati-muted">Search local listings on this device. A purchase request is only a saved demo request; it is not sent to a seller.</p>
+<div class="maati-form"><label>Search crop, category, seller, or location<input id="marketSearch" list="cropSuggestions" placeholder="Search wheat, tomato, pulses, village…" type="search"/></label><label>Filter crop name (optional)<input id="marketFilterCrop" list="cropSuggestions" placeholder="e.g. Wheat, tomato, lentils"/></label><label>Filter category (optional)<select id="marketFilterCategory"><option value="">All crop categories</option><option>Cereals &amp; grains</option><option>Pulses &amp; legumes</option><option>Oilseeds</option><option>Vegetables</option><option>Fruits</option><option>Spices &amp; condiments</option><option>Plantation crops</option><option>Fodder crops</option><option>Flowers</option><option>Medicinal &amp; aromatic</option><option>Nuts &amp; dry fruits</option><option>Seeds &amp; planting material</option><option>Other agricultural produce</option></select></label><label>Maximum distance in km (optional)<input id="marketMaxDistance" min="0" placeholder="e.g. 50" step="1" type="number"/></label><p class="maati-small">Enter buyer coordinates to filter by straight-line distance. This is not driving distance.</p><div class="market-inline-fields"><label>Buyer latitude<input id="buyerLatitude" max="90" min="-90" placeholder="Optional" step="any" type="number"/></label><label>Buyer longitude<input id="buyerLongitude" max="180" min="-180" placeholder="Optional" step="any" type="number"/></label></div></div>
+<div aria-live="polite" class="marketplace-listings" id="marketplaceListings"></div>
+</article>
+</div>
+<div class="maati-grid maati-grid-2 maati-section-gap">
+<article class="maati-card" id="nav-requests"><div class="maati-card-icon">📋</div><h3>Purchase requests on this device</h3><p class="maati-muted">Review demo requests created from listings. These are not transmitted to another user.</p><div aria-live="polite" class="maati-list" id="marketplaceRequests"></div></article>
+<article class="maati-card" id="nav-prices"><div class="maati-card-icon">📊</div><h3>My mandi price notebook</h3><p class="maati-muted">Record prices you personally checked and note the source. This is a manual log, not a live price feed.</p><form class="maati-form" id="marketPriceForm"><label>Crop<input id="priceLogCrop" maxlength="80" placeholder="Crop name" required=""/></label><label>Mandi / market<input id="priceLogMarket" maxlength="120" placeholder="Market name and district" required=""/></label><label>Price (₹ per quintal)<input id="priceLogValue" min="0" required="" step="0.01" type="number"/></label><label>Date checked<input id="priceLogDate" required="" type="date"/></label><label>Source / notes<input id="priceLogSource" maxlength="150" placeholder="Official site, notice board, phone check…" required=""/></label><button class="maati-btn" type="submit">Save price record</button></form><div aria-live="polite" class="maati-list" id="marketPriceHistory"></div></article>
+</div>
+<div class="market-tools-row"><button class="maati-btn maati-btn-secondary" id="marketExportBtn" type="button">Export marketplace data</button><button class="maati-btn maati-btn-danger" id="marketClearBtn" type="button">Clear marketplace data</button></div>
+<p aria-live="polite" class="maati-status" id="marketplaceStatus" role="status">Marketplace ready. Your data stays in this browser.</p>
+<div class="maati-footer-note"><strong>Before public launch:</strong> add secure sign-in, a server database, listing moderation, spam/report tools, consent-based location sharing, price data with timestamps, buyer/seller notifications, and clear rules for payments, transport, quality disputes, and fraud prevention. Never ask users to share OTPs or payment PINs.</div>
+</div>
+</section>
+<div class="maati-grid maati-grid-3 maati-section-gap" id="advancedTools">
+<article class="maati-card" id="nav-field-map"><div class="maati-card-icon">🛰️</div><h3>Field map &amp; crop monitoring</h3><p class="maati-muted">Plan a future map view for field boundaries, crop history, and satellite vegetation trends.</p><div class="maati-result-panel">Status: not connected. Map tiles, GPS consent, satellite imagery, and a trusted interpretation service are required.</div><button class="maati-btn maati-btn-secondary maati-backend-feature" data-feature="Field mapping and satellite crop monitoring" type="button">Plan this feature</button></article>
+<article class="maati-card"><div class="maati-card-icon">🛠️</div><h3>Machinery &amp; local services</h3><p class="maati-muted">A future directory for tractor/harvester rental, soil labs, and agricultural support offices.</p><div class="maati-result-panel">Status: directory data and location-aware search required.</div><button class="maati-btn maati-btn-secondary maati-backend-feature" data-feature="Machinery rental and local service directory" type="button">Plan this feature</button></article>
+<article class="maati-card"><div class="maati-card-icon">🛡️</div><h3>Crop insurance guidance</h3><p class="maati-muted">Provide policy explainers, claim steps, and official portal links after verifying the farmer's state and crop.</p><div class="maati-result-panel">Status: official scheme rules and current deadlines must be verified.</div><button class="maati-btn maati-btn-secondary maati-backend-feature" data-feature="Crop insurance guidance" type="button">Plan this feature</button></article>
+<article class="maati-card"><div class="maati-card-icon">🧺</div><h3>Harvest &amp; storage checklist</h3><p class="maati-muted">Use this checklist to record checks before storing produce. Actual moisture and safety requirements depend on crop and storage conditions.</p><div class="maati-form" id="storageChecklist"><label class="maati-inline-check"><input type="checkbox"/> Crop maturity checked</label><label class="maati-inline-check"><input type="checkbox"/> Storage area inspected</label><label class="maati-inline-check"><input type="checkbox"/> Moisture measured using a suitable method</label><label class="maati-inline-check"><input type="checkbox"/> Bags / containers checked</label><button class="maati-btn maati-btn-secondary" id="resetStorageChecklist" type="button">Reset checklist</button></div></article>
+<article class="maati-card"><div class="maati-card-icon">🧴</div><h3>Input price comparison</h3><p class="maati-muted">Compare seed, fertilizer, and approved crop-protection product prices from verified sellers in a later version.</p><div class="maati-result-panel">Status: no product prices are shown until seller, location, stock, and date can be verified.</div><button class="maati-btn maati-btn-secondary maati-backend-feature" data-feature="Agricultural input price comparison" type="button">Plan this feature</button></article>
+<article class="maati-card"><div class="maati-card-icon">🔔</div><h3>Alert preferences</h3><p class="maati-muted">Choose the types of notifications you would like when live data and notifications are connected.</p><div class="maati-form" id="alertPreferences"><label class="maati-inline-check"><input checked="" data-alert-pref="weather" type="checkbox"/> Weather warnings</label><label class="maati-inline-check"><input data-alert-pref="market" type="checkbox"/> Mandi price changes</label><label class="maati-inline-check"><input checked="" data-alert-pref="tasks" type="checkbox"/> Farm task reminders</label><label class="maati-inline-check"><input data-alert-pref="schemes" type="checkbox"/> Scheme deadlines</label><label>Quiet hours start<input id="quietStart" type="time" value="21:00"/></label><label>Quiet hours end<input id="quietEnd" type="time" value="07:00"/></label><button class="maati-btn" id="saveAlertPrefs" type="button">Save preferences locally</button><p class="maati-status" id="alertPrefsStatus" role="status"></p></div></article>
+</div>
+<div class="maati-footer-note"><strong>Important:</strong> This is a frontend prototype. Weather, live mandi prices, AI crop diagnosis, satellite imagery, notifications, accounts, community posting, and cloud sync require a backend and reliable data providers. Never use sample values or unverified AI output as the sole basis for pesticide, fertilizer, irrigation, or financial decisions.</div>
+</div>
+</section>
+<style>
+.maati-tools{font-family:Manrope,Arial,sans-serif;padding:38px 20px 48px;background:#f4f8f4;color:#173b2b}.maati-wrap{max-width:1280px;margin:0 auto}.maati-heading-row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px}.maati-heading-row h2{font-size:clamp(26px,3vw,36px);line-height:1.2;font-weight:800;margin:0 0 8px;color:#174a32}.maati-eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:#4b8062;margin:0 0 8px}.maati-muted{color:#607568;font-size:13px;line-height:1.55;margin:6px 0 14px}.maati-demo-badge{white-space:nowrap;font-size:11px;font-weight:800;background:#fff3d8;color:#825414;border:1px solid #efd69a;border-radius:999px;padding:8px 12px}.maati-grid{display:grid;gap:16px}.maati-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.maati-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.maati-section-gap{margin-top:16px}.maati-card{min-width:0;background:#fff;border:1px solid #dce8dd;border-radius:18px;padding:20px;box-shadow:0 5px 18px rgba(22,65,42,.045)}.maati-card h3{font-size:18px;font-weight:800;margin:4px 0;color:#204c35}.maati-card-icon{font-size:25px;margin-bottom:7px}.maati-form{display:grid;gap:11px}.maati-form label,.maati-search-label{display:grid;gap:6px;color:#315642;font-size:12px;font-weight:700}.maati-form input:not([type=checkbox]),.maati-form select,.maati-form textarea,.maati-search-label input{width:100%;box-sizing:border-box;border:1px solid #d4e1d6;border-radius:10px;padding:10px 11px;font:inherit;font-size:13px;color:#173b2b;background:#fbfdfb;min-width:0}.maati-form textarea{resize:vertical}.maati-form input:focus,.maati-form select:focus,.maati-form textarea:focus,.maati-search-label input:focus{outline:2px solid #79b894;outline-offset:1px}.maati-btn{border:0;border-radius:10px;background:#236b46;color:white;padding:11px 14px;font-size:13px;font-weight:800;cursor:pointer}.maati-btn:hover{background:#174a32}.maati-btn-secondary{background:#e7f1e9;color:#204c35;border:1px solid #cbded0}.maati-btn-danger{background:#fff0ed;color:#9a3025;border:1px solid #f0c9c3}.maati-status,.maati-small{font-size:11px;color:#607568;line-height:1.5}.maati-demo-note{font-size:12px;color:#8a5314;background:#fff7e6;padding:8px;border-radius:8px}.maati-list{display:grid;gap:8px;margin-top:12px}.maati-list-item{border:1px solid #e0e9e1;background:#f8fbf8;border-radius:10px;padding:10px;font-size:12px;line-height:1.5;overflow-wrap:anywhere}.maati-list-item strong{color:#204c35}.maati-list-item button{float:right;border:1px solid #d8e3da;background:#fff;border-radius:7px;padding:4px 7px;color:#8b3429;cursor:pointer;font-size:11px}.maati-results{margin-top:12px}.maati-result-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #e4ece5;font-size:12px}.maati-result-panel{margin-top:12px;background:#eff7f0;border:1px solid #d7e8d9;border-radius:12px;padding:12px;font-size:13px;line-height:1.6;overflow-wrap:anywhere}.maati-calc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.maati-calc-grid .maati-btn{grid-column:1/-1}.maati-task-form{grid-template-columns:1fr 1fr}.maati-task-form label:first-child{grid-column:1/-1}.maati-task-form button{grid-column:1/-1}.maati-inline-check{display:flex!important;align-items:center;gap:10px!important;font-size:13px!important}.maati-inline-check input{width:17px;height:17px;accent-color:#236b46}.maati-link-list{display:grid;gap:9px}.maati-link-list a,.maati-small a{color:#236b46;font-weight:800;font-size:12px;text-decoration:underline;text-underline-offset:3px}.maati-footer-note{margin-top:18px;border:1px solid #ecd8a6;background:#fff8e8;color:#715322;padding:15px 17px;border-radius:13px;font-size:12px;line-height:1.6}.maati-tools.large-text{font-size:18px}.maati-tools.large-text .maati-card p,.maati-tools.large-text .maati-form label,.maati-tools.large-text .maati-form input,.maati-tools.large-text .maati-form select,.maati-tools.large-text .maati-form textarea{font-size:15px}.maati-tools.reduce-motion *{animation:none!important;transition:none!important;scroll-behavior:auto!important}.maati-tools.low-data .maati-card{box-shadow:none}.maati-tools.low-data .maati-card-icon{display:none}
+@media(max-width:950px){.maati-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.maati-tools{padding:28px 12px}.maati-heading-row{display:block}.maati-demo-badge{display:inline-block;margin-top:6px}.maati-grid-3,.maati-grid-2{grid-template-columns:1fr}.maati-card{padding:16px}.maati-calc-grid{grid-template-columns:1fr}.maati-calc-grid .maati-btn{grid-column:auto}.maati-task-form{grid-template-columns:1fr}.maati-task-form label:first-child,.maati-task-form button{grid-column:auto}}
+
+
+/* Crop name autocomplete and categories */
+#cropSuggestions{max-height:260px}.market-category-badge{display:inline-block;margin:7px 6px 0 0;padding:4px 8px;border-radius:999px;background:#edf5ee;color:#285d3b;font-size:11px;font-weight:700}body.dark-mode .market-category-badge{background:#263d2d;color:#c9ebd2}
+
+/* Crop marketplace styles */
+.marketplace-warning{margin:14px 0;padding:13px 15px;border:1px solid #e6cf91;background:#fff8e7;color:#694e19;border-radius:12px;font-size:12px;line-height:1.6}.marketplace-listings{display:grid;gap:12px;margin-top:14px}.market-listing-card{border:1px solid #dce8dd;border-radius:13px;padding:14px;background:#fbfdfb;min-width:0}.market-listing-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.market-listing-head h4{font-size:16px;font-weight:800;color:#204c35;margin:0}.market-stock-badge{font-size:10px;font-weight:800;padding:5px 8px;border-radius:99px;background:#e4f4e8;color:#205d3a;white-space:nowrap}.market-price{font-size:20px;font-weight:900;color:#236b46;margin:8px 0 3px}.market-meta,.market-notes,.market-distance{font-size:12px;line-height:1.55;color:#607568;margin:5px 0;overflow-wrap:anywhere}.market-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.market-actions .maati-btn{font-size:11px;padding:8px 10px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.market-inline-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.market-tools-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.market-tools-row .maati-btn{flex:1;min-width:180px}.marketplace-listings:empty{display:none}body.dark-mode .marketplace-warning{background:#302a1a;color:#f3dfaa;border-color:#64552c}body.dark-mode .market-listing-card{background:#1b2820;border-color:#3b4a40}body.dark-mode .market-listing-head h4{color:#b5e8c7}body.dark-mode .market-price{color:#a7e7c3}body.dark-mode .market-meta,body.dark-mode .market-notes,body.dark-mode .market-distance{color:#b4c5b9}body.dark-mode .market-stock-badge{background:#244832;color:#c8f0d4}body.dark-mode .market-listing-card .maati-btn-secondary{background:#26382c;color:#d6e9dc;border-color:#45564a}
+@media(max-width:640px){.market-inline-fields{grid-template-columns:1fr}.market-listing-head{display:block}.market-stock-badge{display:inline-block;margin-top:7px}.market-actions .maati-btn{flex:1}}
+
+</style>
+<footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full px-gutter-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">MandiAurMaati <span class="text-secondary">मंडी और माटी</span></span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Empowering Indian agriculture through precision agronomy, hyper-local climate intelligence, and real-time mandi transparency.</p></div><div class="flex flex-col gap-space-xs"><span class="font-label-lg text-label-lg text-on-surface">Intelligence Tools</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="weather-intelligence" href="#">Weather &amp; Rain Radar</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="soil-intelligence" href="#">Soil Telemetry &amp; N-P-K</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="mandi-marketplace" href="#">APMC Mandi Ticker</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-lg text-label-lg text-on-surface">Community &amp; Support</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="kisan-chaupal-community" href="#">Kisan Chaupal Forum</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="kisan-sakha-voice-ai" href="#">Voice AI Assistant</a><span class="font-body-sm text-body-sm text-on-surface-variant">Toll-Free Agri Helpline: 1800-180-1551</span></div><div class="flex flex-col gap-space-xs"><span class="font-label-lg text-label-lg text-on-surface">Connectivity &amp; Standards</span><div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary text-base">verified</span><span>ICAR-aligned agronomy feeds</span></div><div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary text-base">wifi_tethering</span><span>Low-bandwidth sync engine</span></div></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 MandiAurMaati (मंडी और माटी). Built for Indian Farmers &amp; Agronomists.</p><p>Ministry of Agriculture &amp; Farmers Welfare Compliant Data Standards</p></div></div></footer>
+<script>
+  // ==========================================
+  // MULTILINGUAL DATABASE (All 9 Indian Languages)
+  // ==========================================
+  const langData = {
+    hi: {
+      subTitle: "किसान सखा",
+      heroDesc: "आपकी अपनी बोली में 24/7 कृषि साथी। फसल स्वास्थ्य, मौसम, मंडी भाव और सही समय पर छिड़काव से जुड़े सवाल पूछें।",
+      hubHeadline: "अपनी स्थानीय बोली में सहजता से बोलें",
+      hubSubprompt: '"बोलने के लिए माइक दबाएं — सवाल पूछें जैसे \'मेरी गेहूं में क्या छिड़कें?\'"',
+      micBtn: "बोलें",
+      listening: "सुन रहे हैं... (भेजने के लिए फिर दबाएं)",
+      keywords: '"गेहूं, खाद, मौसम, पानी, मंडी भाव के लिए सक्रिय..."',
+      faqTitle: "करनाल में आज अक्सर पूछे जाने वाले सवाल",
+      streamTitle: "सक्रिय कृषि संवाद (Live Consultation)",
+      farmerQueryPrimary: '"मेरी गेहूं की फसल में पत्तों पर पीले धब्बे दिख रहे हैं, और कल बारिश का अनुमान है। मुझे क्या करना चाहिए?"',
+      farmerQuerySub: '"Yellow spots appearing on my wheat leaves, and rain is predicted tomorrow. What should I do?"',
+      listenAudioTitle: "ऑडियो सुनें (हिंदी)",
+      diagnosisTitle: "उदाहरण निदान कार्ड (वास्तविक निदान नहीं)",
+      diagnosisDesc: "करनाल खेत की परिस्थितियाँ (Demo नमी, --°C रात का तापमान, उच्च आर्द्रता) फंगल बीजाणुओं के अंकुरण के अनुकूल हैं।",
+      actionPlanTitle: "तुरंत करने योग्य 3 कदम (3-Step Action Plan)",
+      step1Title: "वर्षा से पहले कवकनाशी (Fungicide) का छिड़काव बिल्कुल न करें",
+      step1Desc: "आज छिड़काव न करें। 18 किमी/घंटे की हवा व संभावित बारिश दवा को धो देगी, जिससे लागत व्यर्थ जाएगी।",
+      step2Title: "खेत की नालियों की सफाई व जल निकासी सुनिश्चित करें",
+      step2Desc: "जलभराव रोकें। ठहरा हुआ पानी फंगस के फैलाव को कई गुना तेज कर देता है।",
+      step3Title: "फसल सुरक्षा उपचार से पहले स्थानीय कृषि विशेषज्ञ से पुष्टि करें",
+      step3Desc: "यह नमूना इंटरफ़ेस है। दवा, मात्रा और छिड़काव समय की पुष्टि स्थानीय कृषि अधिकारी और उत्पाद लेबल से करें।",
+      placeholder: "या अपना सवाल हिंदी, पंजाबी या अंग्रेजी में लिखें...",
+      followup1: "प्रोपिकोनाज़ोल की अनुमानित कीमत क्या है? (Estimated Price)",
+      followup2: "करनाल में निकटतम प्रमाणित कृषि सेवा केंद्र कहाँ है?",
+      followup3: "क्या यह बीमारी पड़ोस के खेतों में भी फैल सकती है?"
+    },
+    pa: {
+      subTitle: "ਕਿਸਾਨ ਸਖਾ",
+      heroDesc: "ਤੁਹਾਡੀ ਆਪਣੀ ਬੋਲੀ ਵਿੱਚ 24/7 ਖੇਤੀਬਾੜੀ ਸਹਾਇਕ। ਫਸਲ ਦੀ ਸਿਹਤ, ਮੌਸਮ, ਮੰਡੀ ਭਾਅ ਅਤੇ ਛਿੜਕਾਅ ਬਾਰੇ ਸਵਾਲ ਪੁੱਛੋ।",
+      hubHeadline: "ਆਪਣੀ ਪੰਜਾਬੀ ਬੋਲੀ ਵਿੱਚ ਖੁੱਲ੍ਹ ਕੇ ਬੋਲੋ",
+      hubSubprompt: '"ਬੋਲਣ ਲਈ ਮਾਈਕ ਦਬਾਓ — ਪੁੱਛੋ \'ਕਣਕ ਉੱਤੇ ਕਿਹੜੀ ਦਵਾਈ ਛਿੜਕਣੀ ਚਾਹੀਦੀ ਹੈ?\'"',
+      micBtn: "ਬੋਲੋ",
+      listening: "ਸੁਣ ਰਿਹਾ ਹਾਂ... (ਭੇਜਣ ਲਈ ਦਬਾਓ)",
+      keywords: '"ਕਣਕ, ਖਾਦ, ਮੌਸਮ, ਪਾਣੀ, ਮੰਡੀ ਭਾਅ..."',
+      faqTitle: "ਕਰਨਾਲ ਵਿੱਚ ਅੱਜ ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ",
+      streamTitle: "ਸਰਗਰਮ ਖੇਤੀਬਾੜੀ ਸਲਾਹ-ਮਸ਼ਵਰਾ (Live)",
+      farmerQueryPrimary: '"ਮੇਰੀ ਕਣਕ ਦੇ ਪੱਤਿਆਂ ਉੱਤੇ ਪੀਲੇ ਧੱਬੇ ਦਿਖ ਰਹੇ ਹਨ, ਤੇ ਕੱਲ੍ਹ ਮੀਂਹ ਪੈਣ ਦਾ ਅਨੁਮਾਨ ਹੈ। ਮੈਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain predicted tomorrow. What to do?"',
+      listenAudioTitle: "ਪੰਜਾਬੀ ਵਿੱਚ ਆਡੀਓ ਸੁਣੋ",
+      diagnosisTitle: "ਪੀਲੀ ਕੁੰਗੀ (Yellow Rust) ਦੇ ਸ਼ੁਰੂਆਤੀ ਲੱਛਣ",
+      diagnosisDesc: "ਖੇਤ ਦੀ ਨਮੀ Demo ਅਤੇ --°C ਤਾਪਮਾਨ ਪੀਲੀ ਕੁੰਗੀ ਦੀ ਉੱਲੀ ਦੇ ਫੈਲਾਅ ਲਈ ਅਨੁਕੂਲ ਹਨ।",
+      actionPlanTitle: "ਤੁਰੰਤ ਕਰਨ ਯੋਗ 3 ਕਦਮ (Action Plan)",
+      step1Title: "ਮੀਂਹ ਤੋਂ ਪਹਿਲਾਂ ਕਿਸੇ ਵੀ ਉੱਲੀਨਾਸ਼ਕ ਦਾ ਛਿੜਕਾਅ ਨਾ ਕਰੋ",
+      step1Desc: "ਅੱਜ ਸਪਰੇਅ ਨਾ ਕਰੋ। ਤੇਜ਼ ਹਵਾ ਅਤੇ ਮੀਂਹ ਦਵਾਈ ਨੂੰ ਵਹਾ ਦੇਣਗੇ।",
+      step2Title: "ਖੇਤ ਵਿੱਚੋਂ ਪਾਣੀ ਦੀ ਨਿਕਾਸੀ ਦਾ ਪੂਰਾ ਪ੍ਰਬੰਧ ਰੱਖੋ",
+      step2Desc: "ਖੜ੍ਹਾ ਪਾਣੀ ਉੱਲੀ ਦੇ ਬੀਜਾਣੂਆਂ ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਵਧਾਉਂਦਾ ਹੈ।",
+      step3Title: "ਮੀਂਹ ਰੁਕਣ ਦੇ 24 ਘੰਟੇ ਬਾਅਦ ਪ੍ਰੋਪੀਕੋਨਾਜ਼ੋਲ 25% EC ਦਾ ਛਿੜਕਾਅ ਕਰੋ",
+      step3Desc: "ਮਾਤਰਾ: 200 ਮਿ.ਲੀ. ਪ੍ਰਤੀ ਏਕੜ, 200 ਲੀਟਰ ਪਾਣੀ ਵਿੱਚ ਧੁੱਪ ਨਿਕਲਣ ਤੇ ਛਿੜਕੋ।",
+      placeholder: "ਜਾਂ ਆਪਣਾ ਸਵਾਲ ਪੰਜਾਬੀ ਜਾਂ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਲਿਖੋ...",
+      followup1: "ਪ੍ਰੋਪੀਕੋਨਾਜ਼ੋਲ ਦੀ ਅੰਦਾਜ਼ਨ ਕੀਮਤ ਕੀ ਹੈ?",
+      followup2: "ਕਰਨਾਲ ਵਿੱਚ ਨੇੜਲਾ ਪ੍ਰਮਾਣਿਤ ਖਾਦ-ਬੀਜ ਕੇਂਦਰ ਕਿੱਥੇ ਹੈ?",
+      followup3: "ਕੀ ਇਹ ਬਿਮਾਰੀ ਗੁਆਂਢੀ ਖੇਤਾਂ ਵਿੱਚ ਫੈਲ ਸਕਦੀ ਹੈ?"
+    },
+    bn: {
+      subTitle: "কিসান সখা",
+      heroDesc: "আপনার মাতৃভাষায় ২৪/৭ কৃষি পরামর্শদাতা। ফসলের যত্ন, আবহাওয়া, মান্ডি দর ও স্প্রে নিয়ে প্রশ্ন করুন।",
+      hubHeadline: "আপনার আঞ্চলিক ভাষায় কথা বলুন",
+      hubSubprompt: '"কথা বলতে মাইক চাপুন — প্রশ্ন করুন \'গম ফসলে কী স্প্রে করব?\'"',
+      micBtn: "বলুন",
+      listening: "শুনছি... (পাঠাতে চাপুন)",
+      keywords: '"গম, সার, আবহাওয়া, জলসেচ, মান্ডি দর..."',
+      faqTitle: "আজকের সর্বাধিক জিজ্ঞাসিত কৃষি প্রশ্নাবলি",
+      streamTitle: "সক্রিয় কৃষি পরামর্শ (Live Advice)",
+      farmerQueryPrimary: '"আমার গমের পাতায় হলুদ ছোপ দেখা যাচ্ছে এবং কাল বৃষ্টির পূর্বাভাস রয়েছে। আমার কী করা উচিত?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain forecast tomorrow. What to do?"',
+      listenAudioTitle: "বাংলায় অডিও শুনুন",
+      diagnosisTitle: "হলুদ মরচে রোগ (Yellow Rust) প্রাথমিক লক্ষণ",
+      diagnosisDesc: "জমির ৬৮% আর্দ্রতা এবং আর্দ্র আবহাওয়া হলুদ মরচে ছত্রাকের বিস্তারের অনুকূল।",
+      actionPlanTitle: "তাৎক্ষণিক ৩-দফা করণীয় নির্দেশিকা",
+      step1Title: "বৃষ্টির পূর্বে কোনো ছত্রাকনাশক স্প্রে করবেন না",
+      step1Desc: "আজ স্প্রে করবেন না। বাতাস ও বৃষ্টিতে রাসায়নিক ধুয়ে নষ্ট হয়ে যাবে।",
+      step2Title: "জমিতে জল জমে থাকা প্রতিরোধ করুন ও নালা পরিষ্কার করুন",
+      step2Desc: "জমে থাকা জল ছত্রাকের আক্রমণ দ্রুত বৃদ্ধি করে।",
+      step3Title: "বৃষ্টি থামার ২৪ ঘণ্টা পর প্রোপিকোনাজোল ২৫% ইসি স্প্রে করুন",
+      step3Desc: "মাত্রা: ২০০ মিলি প্রতি একর, ২০০ লিটার জলে মিশিয়ে রোদে স্প্রে করুন।",
+      placeholder: "বা বাংলায় আপনার প্রশ্ন এখানে লিখুন...",
+      followup1: "প্রোপিকোনাজোলের আনুমানিক বাজারদর কত?",
+      followup2: "নিকটস্থ সরকারি কৃষি সহায়তা কেন্দ্র কোথায়?",
+      followup3: "এই রোগ কি পাশের জমিতে ছড়াতে পারে?"
+    },
+    mr: {
+      subTitle: "किसान सखा",
+      heroDesc: "तुमच्या बोलीभाषेतील २४/७ कृषी मित्र. पीक संरक्षण, हवामान अंदाज, आणि बाजारभावाविषयी थेट विचारा.",
+      hubHeadline: "तुमच्या स्थानिक भाषेत सहजपणे बोला",
+      hubSubprompt: '"बोलण्यासाठी माइक दाबा — जसे \'गव्हावर कोणती फवारणी करावी?\'"',
+      micBtn: "बोला",
+      listening: "ऐकत आहे... (पाठवण्यासाठी दाबा)",
+      keywords: '"गहू, खते, पाऊस, पाणी व्यवस्थापन, बाजारभाव..."',
+      faqTitle: "शेतकऱ्यांनी विचारलेले महत्त्वाचे प्रश्न",
+      streamTitle: "सक्रिय कृषी संवाद (Live Session)",
+      farmerQueryPrimary: '"माझ्या गव्हाच्या पानांवर पिवळे ठिपके दिसत आहेत आणि उद्या पावसाचा अंदाज आहे. मी काय करू?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain forecast tomorrow. What to do?"',
+      listenAudioTitle: "मराठीत ऑडिओ ऐका",
+      diagnosisTitle: "तांबेरा रोग (Yellow Rust) संभाव्य लक्षणे",
+      diagnosisDesc: "६८% मातीतील ओलावा आणि रात्रीचे १८°C तापमान बुरशीच्या प्रसारास अनुकूल आहे.",
+      actionPlanTitle: "तातडीने करावयाची ३-सूत्री कृती योजना",
+      step1Title: "पावसापूर्वी कोणत्याही बुरशीनाशकाची फवारणी करू नका",
+      step1Desc: "आज फवारणी करू नका. वारा आणि पावसामुळे औषध वाहून जाऊन खर्च वाया जाईल.",
+      step2Title: "शेतातील पाण्याचा निचरा योग्य राहील याची काळजी घ्या",
+      step2Desc: "साचलेल्या पाण्यामुळे बुरशीचा प्रादुर्भाव वेगाने वाढतो.",
+      step3Title: "पाऊस थांबल्यानंतर २४ तासांनी प्रोपिकोनाझोल २५% EC ची फवारणी करा",
+      step3Desc: "प्रमाण: २०० मिली प्रति एकर, २०० लिटर पाण्यात मिसळून उन्हात फवारा.",
+      placeholder: "किंवा आपला प्रश्न मराठीत टाईप करा...",
+      followup1: "प्रोपिकोनाझोलची अंदाजे किंमत किती आहे?",
+      followup2: "जवळचे कृषी विज्ञान केंद्र कुठे आहे?",
+      followup3: "हा रोग शेजारच्या पिकांवर पसरू शकतो का?"
+    },
+    te: {
+      subTitle: "కిసాన్ సఖ",
+      heroDesc: "మీ స్థానిక భాషలో 24/7 వ్యవసాయ సలహాదారు. పంట ఆరోగ్యం, వాతావరణం, మార్కెట్ ధరలపై మాట్లాడండి.",
+      hubHeadline: "మీ స్వభాషలో సులభంగా మాట్లాడండి",
+      hubSubprompt: '"మాట్లాడటానికి మైక్ నొక్కండి — \'గోధుమ పంటలో ఏ మందు పిచికారీ చేయాలి?\'"',
+      micBtn: "మాట్లాడండి",
+      listening: "వింటున్నాను... (పంపడానికి నొక్కండి)",
+      keywords: '"గోధుమ, ఎరువులు, వర్షం, సాగునీరు, మండి ధర..."',
+      faqTitle: "ఈ రోజు రైతులు ఎక్కువగా అడిగిన ప్రశ్నలు",
+      streamTitle: "ప్రత్యక్ష వ్యవసాయ సలహా కేంద్రం (Live)",
+      farmerQueryPrimary: '"నా గోధుమ ఆకులపై పసుపు మచ్చలు కనిపిస్తున్నాయి, రేపు వర్షం పడే అవకాశం ఉంది. నేను ఏమి చేయాలి?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain predicted tomorrow. What should I do?"',
+      listenAudioTitle: "తెలుగులో వినండి",
+      diagnosisTitle: "పసుపు కుంకుమ తెగులు (Yellow Rust) ప్రారంభ సంకేతాలు",
+      diagnosisDesc: "నేలలో Demo తేమ మరియు వాతావరణం శిలీంధ్ర వ్యాప్తికి అనుకూలంగా ఉన్నాయి.",
+      actionPlanTitle: "వెంటనే చేయవలసిన 3 ముఖ్యమైన పనులు",
+      step1Title: "వర్షానికి ముందు ఎటువంటి శిలీంధ్ర సంహారక మందు పిచికారీ చేయవద్దు",
+      step1Desc: "ఈ రోజు పిచికారీ చేయకండి. వర్షం వల్ల మందు కొట్టుకుపోయి వృథా అవుతుంది.",
+      step2Title: "పొలంలో నీరు నిల్వ ఉండకుండా కాలువలను శుభ్రం చేయండి",
+      step2Desc: "నిలిచిన నీరు తెగులును మరింత త్వరగా వ్యాపింపజేస్తుంది.",
+      step3Title: "వర్షం తగ్గిన 24 గంటల తర్వాత ప్రోపికోనజోల్ 25% EC పిచికారీ చేయండి",
+      step3Desc: "మోతాదు: ఎకరాకు 200 మి.లీ, 200 లీటర్ల నీటిలో కలిపి ఎండలో పిచికారీ చేయండి.",
+      placeholder: "లేదా మీ ప్రశ్నను ఇక్కడ తెలుగులో నమోదు చేయండి...",
+      followup1: "ప్రోపికోనజోల్ మార్కెట్ ధర ఎంత?",
+      followup2: "సమీపంలోని సర్టిఫైడ్ రైతు సేవా కేంద్రం ఎక్కడ ఉంది?",
+      followup3: "ఈ వ్యాధి పక్క పొలాలకు కూడా వ్యాపిస్తుందా?"
+    },
+    ta: {
+      subTitle: "கிசான் சகா",
+      heroDesc: "உங்கள் சொந்த மொழியில் 24/7 விவசாய நண்பன். பயிர் பாதுகாப்பு, மழை, மண்டி விலை குறித்து உடனே கேளுங்கள்.",
+      hubHeadline: "உங்கள் வட்டார வழக்கில் இயல்பாகப் பேசுங்கள்",
+      hubSubprompt: '"பேச மைக் பட்டனை அழுத்தவும் — \'கோதுமை பயிருக்கு என்ன தெளிக்க வேண்டும்?\'"',
+      micBtn: "பேசுங்கள்",
+      listening: "கேட்கிறது... (அனுப்ப மீண்டும் அழுத்தவும்)",
+      keywords: '"கோதுமை, உரம், மழை, நீர் பாசனம், மண்டி விலை..."',
+      faqTitle: "விவசாயிகள் இன்று அதிகம் கேட்கும் கேள்விகள்",
+      streamTitle: "நேரடி விவசாய ஆலோசனை (Live)",
+      farmerQueryPrimary: '"என் கோதுமை இலைகளில் மஞ்சள் புள்ளிகள் தென்படுகின்றன, நாளை மழை பெய்ய வாய்ப்புள்ளது. நான் என்ன செய்ய வேண்டும்?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain predicted tomorrow. What should I do?"',
+      listenAudioTitle: "தமிழில் ஆடியோ கேளுங்கள்",
+      diagnosisTitle: "மஞ்சள் துரு நோய் (Yellow Rust) ஆரம்ப அறிகுறிகள்",
+      diagnosisDesc: "மண்ணில் Demo ஈரப்பதம் மற்றும் குளிர்ந்த வானிலை பூஞ்சை பரவுவதற்கு சாதகமாக உள்ளது.",
+      actionPlanTitle: "உடனடியாக செய்ய வேண்டிய 3 படிநிலைகள்",
+      step1Title: "மழைக்கு முன் பூஞ்சைக் கொல்லி மருந்து தெளிக்க வேண்டாம்",
+      step1Desc: "இன்று மருந்து தெளிக்க வேண்டாம். காற்று மற்றும் மழையால் மருந்து அடித்துச் செல்லப்படும்.",
+      step2Title: "வயலில் தண்ணீர் தேங்காமல் வடிகால் வசதியை உறுதி செய்யவும்",
+      step2Desc: "தேங்கிய நீர் பூஞ்சை வித்துக்களை வேகமாகப் பெருக்கும்.",
+      step3Title: "மழை நின்ற 24 மணி நேரம் கழித்து புரொபிகோனசோல் 25% EC தெளிக்கவும்",
+      step3Desc: "அளவு: ஏக்கருக்கு 200 மி.லி, 200 லிட்டர் நீரில் கலந்து வெயில் நேரத்தில் தெளிக்கவும்.",
+      placeholder: "அல்லது உங்கள் கேள்வியை தமிழில் தட்டச்சு செய்யவும்...",
+      followup1: "புரொபிகோனசோலின் தோராயமான விலை என்ன?",
+      followup2: "அருகிலுள்ள வேளாண் விரிவாக்க மையம் எங்குள்ளது?",
+      followup3: "இந்த நோய் அண்டை வயல்களுக்கும் பரவுமா?"
+    },
+    gu: {
+      subTitle: "કિસાન સખા",
+      heroDesc: "તમારી માતૃભાષામાં ૨૪/૭ કૃષિ સલાહકાર. પાક સ્વાસ્થ્ય, હવામાન અને બજાર ભાવ વિશે સીધા પ્રશ્નો પૂછો.",
+      hubHeadline: "તમારી સ્થાનિક બોલીમાં મુક્તપણે બોલો",
+      hubSubprompt: '"બોલવા માટે માઇક દબાવો — પૂછો \'ઘઉંના પાકમાં કઈ દવાનો છંટકાવ કરવો?\'"',
+      micBtn: "બોલો",
+      listening: "સાંભળી રહ્યો છું... (મોકલવા દબાવો)",
+      keywords: '"ઘઉં, ખાતર, વરસાદ, પિયત, માર્કેટ યાર્ડ ભાવ..."',
+      faqTitle: "ખેડૂતો દ્વારા વારંવાર પૂછાતા પ્રશ્નો",
+      streamTitle: "લાઈવ કૃષિ સંવાદ (Live Consultation)",
+      farmerQueryPrimary: '"મારા ઘઉંના પાનમાં પીળા ડાઘ દેખાઈ રહ્યા છે અને કાલે વરસાદની આગાહી છે. મારે શું કરવું જોઈએ?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain predicted tomorrow. What should I do?"',
+      listenAudioTitle: "ગુજરાતીમાં ઑડિયો સાંભળો",
+      diagnosisTitle: "પીળો ગેરુ (Yellow Rust) રોગના પ્રાથમિક લક્ષણો",
+      diagnosisDesc: "જમીનમાં ૬૮% ભેજ અને ભેજવાળું વાતાવરણ ફૂગના ફેલાવા માટે અનુકૂળ છે.",
+      actionPlanTitle: "ત્વરિત કરવા યોગ્ય ૩-પગલાંની યોજના",
+      step1Title: "વરસાદ પહેલાં કોઈ પણ ફૂગનાશકનો છંટકાવ બિલકુલ ન કરવો",
+      step1Desc: "આજે છંટકાવ ન કરો. પવન અને વરસાદથી દવા ધોવાઈ જશે અને ખર્ચ વ્યર્થ જશે.",
+      step2Title: "ખેતરમાં પાણી ભરાઈ ન રહે તે માટે નિકાલની વ્યવસ્થા કરો",
+      step2Desc: "ભરાયેલું પાણી ફૂગને ઝડપથી ફેલાવે છે.",
+      step3Title: "વરસાદ બંધ થયાના ૨૪ કલાક પછી પ્રોપીકોનાઝોલ ૨૫% EC નો છંટકાવ કરવો",
+      step3Desc: "પ્રમાણ: ૨૦૦ મિલી પ્રતિ એકર, ૨૦૦ લિટર પાણીમાં ભેળવી તડકામાં છંટકાવ કરો.",
+      placeholder: "અથવા તમારો પ્રશ્ન અહીં ગુજરાતીમાં લખો...",
+      followup1: "પ્રોપીકોનાઝોલની અંદાજિત કિંમત કેટલી છે?",
+      followup2: "નજીકનું ખેડૂત સેવા કેન્દ્ર ક્યાં આવેલું છે?",
+      followup3: "શું આ રોગ બાજુના ખેતરોમાં ફેલાઈ શકે છે?"
+    },
+    kn: {
+      subTitle: "ಕಿಸಾನ್ ಸಖ",
+      heroDesc: "ನಿಮ್ಮದೇ ಮಾತೃಭಾಷೆಯಲ್ಲಿ 24/7 ಕೃಷಿ ಸಲಹೆಗಾರ. ಬೆಳೆ ರಕ್ಷಣೆ, ಹವಾಮಾನ ಹಾಗೂ ಮಾರುಕಟ್ಟೆ ಧಾರಣೆ ಬಗ್ಗೆ ಮಾತನಾಡಿ.",
+      hubHeadline: "ನಿಮ್ಮ ಸ್ಥಳೀಯ ಭಾಷೆಯಲ್ಲಿ ಸರಳವಾಗಿ ಮಾತನಾಡಿ",
+      hubSubprompt: '"ಮಾತನಾಡಲು ಮೈಕ್ ಒತ್ತಿ — \'ಗೋಧಿ ಬೆಳೆಗೆ ಯಾವ ಔಷಧಿ ಸಿಂಪಡಿಸಬೇಕು?\'"',
+      micBtn: "ಮಾತನಾಡಿ",
+      listening: "ಆಲಿಸುತ್ತಿದೆ... (ಕಳುಹಿಸಲು ಒತ್ತಿ)",
+      keywords: '"ಗೋಧಿ, ಗೊಬ್ಬರ, ಮಳೆ, ನೀರಾವರಿ, ಎಪಿಎಂಸಿ ದರ..."',
+      faqTitle: "ರೈತರು ಇಂದು ಹೆಚ್ಚಾಗಿ ಕೇಳಿದ ಪ್ರಶ್ನೆಗಳು",
+      streamTitle: "ನೇರ ಕೃಷಿ ಸಂವಾದ (Live Consultation)",
+      farmerQueryPrimary: '"ನನ್ನ ಗೋಧಿ ಎಲೆಗಳ ಮೇಲೆ ಹಳದಿ ಚುಕ್ಕೆಗಳು ಕಾಣಿಸುತ್ತಿವೆ ಮತ್ತು ನಾಳೆ ಮಳೆಯ ಮುನ್ಸೂಚನೆ ಇದೆ. ನಾನೇನು ಮಾಡಬೇಕು?"',
+      farmerQuerySub: '"Yellow spots on wheat leaves, rain predicted tomorrow. What should I do?"',
+      listenAudioTitle: "ಕನ್ನಡದಲ್ಲಿ ಆಡಿಯೋ ಆಲಿಸಿ",
+      diagnosisTitle: "ಹಳದಿ ತುಕ್ಕು ರೋಗದ (Yellow Rust) ಆರಂಭಿಕ ಲಕ್ಷಣಗಳು",
+      diagnosisDesc: "ಮಣ್ಣಿನ Demo ತೇವಾಂಶ ಮತ್ತು ಹವಾಮಾನವು ಶಿಲೀಂಧ್ರ ಹರಡುವಿಕೆಗೆ ಪೂರಕವಾಗಿದೆ.",
+      actionPlanTitle: "ತಕ್ಷಣ ಕೈಗೊಳ್ಳಬೇಕಾದ 3 ಕ್ರಮಗಳು",
+      step1Title: "ಮಳೆಗೆ ಮುನ್ನ ಯಾವುದೇ ಶಿಲೀಂಧ್ರನಾಶಕ ಸಿಂಪಡಿಸಬೇಡಿ",
+      step1Desc: "ಇಂದು ಸಿಂಪಡಣೆ ಮಾಡಬೇಡಿ. ಮಳೆ ಮತ್ತು ಗಾಳಿಗೆ ಔಷಧ ತೊಳೆದು ಹೋಗಿ ವ್ಯರ್ಥವಾಗುತ್ತದೆ.",
+      step2Title: "ಜಮೀನಿನಲ್ಲಿ ನೀರು ನಿಲ್ಲದಂತೆ ಬಸಿಗಾಲುವೆಗಳನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿ",
+      step2Desc: "ನಿಂತ ನೀರು ಶಿಲೀಂಧ್ರ ರೋಗವನ್ನು ಶೀಘ್ರವಾಗಿ ಹರಡುತ್ತದೆ.",
+      step3Title: "ಮಳೆ ನಿಂತ 24 ಗಂಟೆಗಳ ನಂತರ ಪ್ರೊಪಿಕೋನಾಜೋಲ್ 25% EC ಸಿಂಪಡಿಸಿ",
+      step3Desc: "ಪ್ರಮಾಣ: ಎಕರೆಗೆ 200 ಮಿ.ಲೀ, 200 ಲೀಟರ್ ನೀರಿಗೆ ಬೆರೆಸಿ ಬಿಸಿಲಿನಲ್ಲಿ ಸಿಂಪಡಿಸಿ.",
+      placeholder: "ಅಥವಾ ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಕನ್ನಡದಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ...",
+      followup1: "ಪ್ರೊಪಿಕೋನಾಜೋಲ್ ಅಂದಾಜು ಬೆಲೆ ಎಷ್ಟು?",
+      followup2: "ಹತ್ತಿರದ ರೈತ ಸಂಪರ್ಕ ಕೇಂದ್ರ ಎಲ್ಲಿದೆ?",
+      followup3: "ಈ ರೋಗ ಪಕ್ಕದ ಜಮೀನಿಗೂ ಹರಡಬಹುದೇ?"
+    },
+    en: {
+      subTitle: "Kisan Sakha",
+      heroDesc: "Your 24/7 spoken-first agricultural companion. Ask questions in your native dialect regarding crop health, erratic weather, mandi rates, and precision spray windows.",
+      hubHeadline: "Tap & Speak Naturally in your local dialect",
+      hubSubprompt: '"Tap mic to speak — ask questions like \'What fungicide should I spray on my wheat?\'"',
+      micBtn: "Speak",
+      listening: "Listening... (Tap to Send)",
+      keywords: '"Listening for: wheat, fertilizer, rain, irrigation, mandi prices..."',
+      faqTitle: "Frequently Asked in Karnal Today",
+      streamTitle: "Active Agronomic Consultation (Live)",
+      farmerQueryPrimary: '"Yellow spots are appearing on my wheat leaves, and rain is predicted tomorrow. What should I do?"',
+      farmerQuerySub: '"मेरी गेहूं की फसल में पत्तों पर पीले धब्बे दिख रहे हैं, और कल बारिश का अनुमान है।"',
+      listenAudioTitle: "Listen in English (AI Synthesis)",
+      diagnosisTitle: "Example diagnosis card (not a real diagnosis)",
+      diagnosisDesc: "Sample text only. No live weather or crop image analysis is connected; this is not a confirmed diagnosis.",
+      actionPlanTitle: "Immediate 3-Step Action Plan",
+      step1Title: "Do NOT spray fungicide before the rainstorm",
+      step1Desc: "Avoid chemical application today. 18 km/h winds and heavy rain will wash away treatments, wasting input costs.",
+      step2Title: "Clear plot drainage furrows to prevent waterlogging",
+      step2Desc: "Stagnant standing water accelerates fungal sporulation across dense wheat crop rows.",
+      step3Title: "Confirm the diagnosis and treatment with a local agricultural officer first",
+      step3Desc: "Demo only: do not rely on this page for pesticide selection, dosage, or timing. Follow the product label and local agricultural officer guidance.",
+      placeholder: "Type your agronomy query in English, Hindi or Punjabi...",
+      followup1: "What is the estimated price of Propiconazole 25% EC?",
+      followup2: "Where is the nearest certified IFFCO/KVK center in Karnal?",
+      followup3: "Can this fungal disease spread to adjacent plots via wind?"
+    }
+  };
+
+  // Toast Helper
+  const toastEl = document.getElementById('toastNotification');
+  const toastMsg = document.getElementById('toastMessage');
+  const toastIcon = document.getElementById('toastIcon');
+  let toastTimer;
+
+  function showToast(message, icon = 'check_circle') {
+    if (!toastEl) return;
+    toastMsg.textContent = message;
+    toastIcon.textContent = icon;
+    toastEl.classList.remove('translate-y-24', 'opacity-0');
+    toastEl.classList.add('translate-y-0', 'opacity-100');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toastEl.classList.remove('translate-y-0', 'opacity-100');
+      toastEl.classList.add('translate-y-24', 'opacity-0');
+    }, 3200);
+  }
+
+  // Mark the page as a frontend-only prototype. Navigation routes will be added after page structure is finalized.
+  document.querySelectorAll('a[data-path][href="#"]').forEach(link => {
+    link.addEventListener('click', (event) => { event.preventDefault(); showToast(`${link.textContent.trim()} will be available when the other pages are built.`, 'info'); });
+  });
+
+  // ==========================================
+  // 1. LANGUAGE SWITCHER LOGIC
+  // ==========================================
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const headerSelect = document.getElementById('headerLangSelect');
+  let currentLang = 'hi';
+
+  function applyLanguage(code) {
+    if (!langData[code]) return;
+    currentLang = code;
+    const d = langData[code];
+
+    // Update Language Pills UI
+    langButtons.forEach(btn => {
+      const isSelected = btn.getAttribute('data-lang') === code;
+      if (isSelected) {
+        btn.className = "lang-btn px-space-md py-1.5 rounded-full bg-primary text-tertiary-fixed font-label-sm text-label-sm shadow-md flex items-center gap-1 transition-all ring-2 ring-primary-fixed";
+        if (!btn.querySelector('.indicator-dot')) {
+          const dot = document.createElement('span');
+          dot.className = "indicator-dot w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse";
+          btn.prepend(dot);
+        }
+      } else {
+        btn.className = "lang-btn px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all";
+        const dot = btn.querySelector('.indicator-dot');
+        if (dot) dot.remove();
+      }
+    });
+
+    // Sync header dropdown
+    if (headerSelect && headerSelect.value !== code) {
+      headerSelect.value = code;
+    }
+
+    // Apply translations across UI
+    const titleSub = document.getElementById('mainTitleSub');
+    if (titleSub) titleSub.textContent = d.subTitle;
+
+    const heroDesc = document.getElementById('heroDescText');
+    if (heroDesc) heroDesc.textContent = d.heroDesc;
+
+    const hubHead = document.getElementById('hubHeadline');
+    if (hubHead) hubHead.textContent = d.hubHeadline;
+
+    const hubSub = document.getElementById('hubSubprompt');
+    if (hubSub) hubSub.textContent = d.hubSubprompt;
+
+    const micTxt = document.getElementById('micButtonText');
+    if (micTxt && !isListening) micTxt.textContent = d.micBtn;
+
+    const kw = document.getElementById('listeningKeywordsPrompt');
+    if (kw) kw.textContent = d.keywords;
+
+    const faqHead = document.getElementById('faqHeaderTitle');
+    if (faqHead) faqHead.textContent = d.faqTitle;
+
+    const streamTitle = document.getElementById('consultationStreamTitle');
+    if (streamTitle) streamTitle.textContent = d.streamTitle;
+
+    const fPrimary = document.getElementById('farmerQueryPrimary');
+    if (fPrimary) fPrimary.textContent = d.farmerQueryPrimary;
+
+    const fSub = document.getElementById('farmerQuerySub');
+    if (fSub) fSub.textContent = d.farmerQuerySub;
+
+    const listenAudio = document.getElementById('listenAudioTitle');
+    if (listenAudio) listenAudio.textContent = d.listenAudioTitle;
+
+    const diagTitle = document.getElementById('diagnosisTitle');
+    if (diagTitle) diagTitle.textContent = d.diagnosisTitle;
+
+    const diagDesc = document.getElementById('diagnosisDescription');
+    if (diagDesc) diagDesc.textContent = d.diagnosisDesc;
+
+    const actTitle = document.getElementById('actionPlanTitle');
+    if (actTitle) actTitle.innerHTML = `<span class="material-symbols-outlined text-secondary">task_alt</span> ${d.actionPlanTitle}`;
+
+    const s1T = document.getElementById('step1Title');
+    if (s1T) s1T.textContent = d.step1Title;
+    const s1D = document.getElementById('step1Desc');
+    if (s1D) s1D.textContent = d.step1Desc;
+
+    const s2T = document.getElementById('step2Title');
+    if (s2T) s2T.textContent = d.step2Title;
+    const s2D = document.getElementById('step2Desc');
+    if (s2D) s2D.textContent = d.step2Desc;
+
+    const s3T = document.getElementById('step3Title');
+    if (s3T) s3T.textContent = d.step3Title;
+    const s3D = document.getElementById('step3Desc');
+    if (s3D) s3D.textContent = d.step3Desc;
+
+    const follow1 = document.getElementById('followup1');
+    if (follow1) follow1.textContent = d.followup1;
+    const follow2 = document.getElementById('followup2');
+    if (follow2) follow2.textContent = d.followup2;
+    const follow3 = document.getElementById('followup3');
+    if (follow3) follow3.textContent = d.followup3;
+
+    const inputEl = document.getElementById('userQueryInput');
+    if (inputEl) inputEl.placeholder = d.placeholder;
+
+    showToast(`Switched voice dialect to: ${code.toUpperCase()} (${d.subTitle})`, 'translate');
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      applyLanguage(lang);
+    });
+  });
+
+  if (headerSelect) {
+    headerSelect.addEventListener('change', (e) => {
+      applyLanguage(e.target.value);
+    });
+  }
+
+  // ==========================================
+  // 2. VOICE MICROPHONE & WAVEFORM SIMULATOR
+  // ==========================================
+  const micButton = document.getElementById('voiceMicTrigger');
+  const listeningText = document.getElementById('listeningStatusText');
+  const waveBars = document.querySelectorAll('#waveformBarContainer div');
+  const halo1 = document.getElementById('micHalo1');
+  const halo2 = document.getElementById('micHalo2');
+  const micBtnText = document.getElementById('micButtonText');
+  const micIcon = document.getElementById('micStateIcon');
+  let isListening = false;
+  let waveInterval = null;
+  let autoStopTimer = null;
+
+  let speechRecognition = null;
+  function startListening() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      showToast('Voice input is not supported in this browser. Please type your question.', 'info');
+      return;
+    }
+    if (isListening) return;
+    speechRecognition = new SpeechRecognition();
+    speechRecognition.lang = ({hi:'hi-IN', pa:'pa-IN', bn:'bn-IN', mr:'mr-IN', te:'te-IN', ta:'ta-IN', gu:'gu-IN', kn:'kn-IN', en:'en-IN'})[currentLang] || 'hi-IN';
+    speechRecognition.interimResults = true;
+    speechRecognition.continuous = false;
+    isListening = true;
+    listeningText.textContent = 'Listening… speak now';
+    listeningText.setAttribute('aria-live','polite');
+    micBtnText.textContent = 'Listening…';
+    micIcon.textContent = 'graphic_eq';
+    micButton?.classList.add('ring-4','ring-secondary-fixed');
+    waveInterval = setInterval(() => waveBars.forEach(bar => { bar.style.height = `${Math.floor(Math.random()*24)+6}px`; }), 140);
+    speechRecognition.onresult = (event) => {
+      let transcript = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) transcript += event.results[i][0].transcript;
+      if (queryInput && transcript) queryInput.value = transcript;
+    };
+    speechRecognition.onerror = () => showToast('Could not recognize speech. Try again or type your question.', 'error');
+    speechRecognition.onend = () => {
+      isListening = false;
+      clearInterval(waveInterval); waveInterval = null;
+      micBtnText.textContent = (langData[currentLang] || langData.hi).micBtn;
+      micIcon.textContent = 'mic';
+      micButton?.classList.remove('ring-4','ring-secondary-fixed');
+      listeningText.textContent = queryInput?.value.trim() ? 'Speech captured. Review and press Send Query.' : 'Ready to listen';
+      waveBars.forEach((bar, idx) => bar.style.height = `${(idx % 4 + 2) * 5}px`);
+      if (queryInput && queryInput.value.trim()) queryInput.focus();
+    };
+    try { speechRecognition.start(); } catch (_) { isListening = false; showToast('Microphone could not start. Check browser permissions.', 'error'); }
+  }
+  function stopListeningAndSubmit() {
+    if (speechRecognition && isListening) speechRecognition.stop();
+  }
+
+  if (micButton) {
+    micButton.addEventListener('click', () => {
+      if (!isListening) {
+        startListening();
+      } else {
+        stopListeningAndSubmit();
+      }
+    });
+  }
+
+  // Header quick talk button
+  const headerMicBtn = document.getElementById('headerMicQuickBtn');
+  if (headerMicBtn) {
+    headerMicBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 180, behavior: 'smooth' });
+      if (!isListening) startListening();
+    });
+  }
+
+  // ==========================================
+  // 3. AUDIO PLAYBACK (Listen in Hindi)
+  // ==========================================
+  const audioPlayBtn = document.getElementById('audioPlayToggle');
+  const audioPlayIcon = document.getElementById('audioPlayIcon');
+  const audioProgressBar = document.getElementById('audioProgressBar');
+  const audioTimerText = document.getElementById('audioTimerText');
+  const audioBarContainer = document.getElementById('audioProgressBarContainer');
+  let isPlaying = false;
+  let audioTimerInterval = null;
+  let audioSeconds = 17;
+  const totalDuration = 42;
+
+  function toggleAudioPlay() {
+    if (!('speechSynthesis' in window)) {
+      showToast('Text-to-speech is not supported in this browser.', 'info');
+      return;
+    }
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+      isPlaying = false;
+      if (audioPlayIcon) audioPlayIcon.textContent = 'play_arrow';
+      showToast('Speech stopped.', 'pause');
+      return;
+    }
+    const textToRead = document.getElementById('diagnosisDescription')?.textContent || 'This is a demo advisory. Connect verified local data before making farm decisions.';
+    const utterance = new SpeechSynthesisUtterance(textToRead);
+    const speechLang = ({hi:'hi-IN',pa:'pa-IN',bn:'bn-IN',mr:'mr-IN',te:'te-IN',ta:'ta-IN',gu:'gu-IN',kn:'kn-IN',en:'en-IN'})[currentLang] || 'hi-IN';
+    utterance.lang = speechLang;
+    utterance.onend = utterance.onerror = () => { isPlaying = false; if (audioPlayIcon) audioPlayIcon.textContent = 'play_arrow'; };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+    isPlaying = true;
+    if (audioPlayIcon) audioPlayIcon.textContent = 'stop';
+    showToast('Reading the visible advisory aloud.', 'volume_up');
+  }
+
+  if (audioPlayBtn) {
+    audioPlayBtn.addEventListener('click', toggleAudioPlay);
+  }
+
+  if (audioBarContainer) {
+    audioBarContainer.setAttribute('aria-label', 'Text-to-speech reads the visible advisory; audio seeking is unavailable.');
+    audioBarContainer.style.cursor = 'default';
+  }
+
+
+  // ==========================================
+  // 4. CHAT FEED CREATION & TEXT INPUT QUERY
+  // ==========================================
+  const messagesFeed = document.getElementById('messagesFeed');
+  const queryInput = document.getElementById('userQueryInput');
+  const sendQueryBtn = document.getElementById('sendQueryBtn');
+
+  function appendNewConversation(userQuery, aiAnswer, role = 'assistant') {
+    if (!messagesFeed) return;
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const userDiv = document.createElement('div');
+    userDiv.className = 'flex flex-col items-end gap-1 max-w-2xl self-end user-bubble animate-fadeIn';
+    const userMeta = document.createElement('div');
+    userMeta.className = 'text-on-surface-variant text-sm';
+    userMeta.textContent = `You • ${timeStr}`;
+    const userCard = document.createElement('div');
+    userCard.className = 'p-4 rounded-2xl bg-surface-container text-on-surface shadow-sm border border-surface-container-highest';
+    const userText = document.createElement('p');
+    userText.className = 'font-semibold';
+    userText.textContent = userQuery;
+    userCard.appendChild(userText); userDiv.append(userMeta, userCard); messagesFeed.appendChild(userDiv);
+
+    const aiDiv = document.createElement('div');
+    aiDiv.className = 'flex flex-col items-start gap-1 max-w-3xl self-start w-full assistant-bubble animate-fadeIn';
+    const aiMeta = document.createElement('div');
+    aiMeta.className = 'text-on-surface-variant text-sm';
+    aiMeta.textContent = 'MandiAurMaati • Frontend demo';
+    const aiCard = document.createElement('div');
+    aiCard.className = 'w-full p-4 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-3 border border-surface-container';
+    const aiText = document.createElement('p');
+    aiText.className = 'text-on-surface leading-relaxed whitespace-pre-wrap';
+    aiText.textContent = aiAnswer;
+    const footer = document.createElement('div');
+    footer.className = 'flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-surface-container-high';
+    const note = document.createElement('span');
+    note.className = 'text-sm text-amber-800 font-semibold';
+    note.textContent = 'Demo response — not verified agricultural advice';
+    const copy = document.createElement('button');
+    copy.type = 'button'; copy.className = 'px-3 py-2 rounded bg-surface-container-lowest text-sm text-primary border'; copy.textContent = 'Copy response';
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(aiAnswer); showToast('Response copied.', 'content_copy'); }
+      catch (_) { showToast('Clipboard access blocked by browser. Select and copy the response manually.', 'info'); }
+    });
+    footer.append(note, copy); aiCard.append(aiText, footer); aiDiv.append(aiMeta, aiCard); messagesFeed.appendChild(aiDiv);
+    messagesFeed.setAttribute('aria-live','polite');
+    aiDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    let history = [];
+    try { history = JSON.parse(localStorage.getItem('mandiAurMaatiChat') || '[]'); if (!Array.isArray(history)) history = []; } catch (_) { history = []; }
+    history.push({ question: userQuery, answer: aiAnswer, createdAt: now.toISOString() });
+    localStorage.setItem('mandiAurMaatiChat', JSON.stringify(history.slice(-50)));
+  }
+
+  function handleSendQuery() {
+    if (!queryInput) return;
+    const query = queryInput.value.trim();
+    if (!query) { showToast('Please enter a question first.', 'warning'); queryInput.focus(); return; }
+    const lower = query.toLocaleLowerCase();
+    let reply = 'This frontend is ready for backend integration, but it is not connected to an AI service yet. Your question has been saved in this browser session history. When we build the backend, this will be sent to a verified agricultural assistant.';
+    if (/(rain|बारिश|ਮੀਂਹ|વરસાદ|மழை|వర్షం)/i.test(lower)) reply = 'Weather data is not connected yet, so I cannot confirm whether rain is expected. Check the official local weather forecast before spraying, irrigating, or applying fertilizer.';
+    else if (/(mandi|price|rate|भाव|ਮੰਡੀ|દામ|விலை)/i.test(lower)) reply = 'Live mandi prices are not connected yet. Please verify today’s price with your local APMC/official mandi source before making a sale decision.';
+    else if (/(disease|रोग|बीमारी|ਕੀੜੇ|pest|yellow|पीले धब्बे)/i.test(lower)) reply = 'A crop diagnosis cannot be confirmed from text alone. Share clear crop photos once the scanner is connected, and confirm suspected disease with a local KVK/agriculture officer before applying any pesticide.';
+    appendNewConversation(query, reply);
+    queryInput.value = '';
+    showToast('Added to the local demo chat. No AI backend is connected yet.', 'send');
+  }
+
+  if (sendQueryBtn) {
+    sendQueryBtn.addEventListener('click', handleSendQuery);
+  }
+  if (queryInput) {
+    queryInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSendQuery();
+      }
+    });
+  }
+
+  // Photo selection is real; image analysis is intentionally deferred until backend setup.
+  const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
+  if (uploadPhotoBtn) {
+    const photoInput = document.createElement('input');
+    photoInput.type = 'file'; photoInput.accept = 'image/*'; photoInput.capture = 'environment';
+    photoInput.hidden = true; photoInput.id = 'cropPhotoInput';
+    document.body.appendChild(photoInput);
+    uploadPhotoBtn.addEventListener('click', () => photoInput.click());
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files?.[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) { showToast('Please select an image file.', 'error'); photoInput.value = ''; return; }
+      if (file.size > 10 * 1024 * 1024) { showToast('Image is too large. Choose a photo under 10 MB.', 'warning'); photoInput.value = ''; return; }
+      const previewUrl = URL.createObjectURL(file);
+      const oldPreview = document.getElementById('selectedCropPhotoPreview');
+      if (oldPreview) { URL.revokeObjectURL(oldPreview.src); oldPreview.remove(); }
+      const preview = document.createElement('img');
+      preview.id = 'selectedCropPhotoPreview'; preview.src = previewUrl; preview.alt = 'Selected crop photo preview';
+      preview.className = 'mt-3 max-w-full max-h-64 rounded-xl border object-contain';
+      uploadPhotoBtn.parentElement?.appendChild(preview);
+      appendNewConversation(`Selected crop photo: ${file.name}`, 'Photo selected successfully. Image analysis is not available until the backend is connected. This preview does not diagnose the crop.');
+      showToast('Photo selected and previewed. No diagnosis was generated.', 'photo_camera');
+      photoInput.value = '';
+    });
+  }
+
+  // ==========================================
+  // 5. FREQUENTLY ASKED QUESTIONS PILLS
+  // ==========================================
+  const faqChips = document.querySelectorAll('.prompt-chip');
+  faqChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const q = chip.getAttribute('data-query') || chip.querySelector('.font-label-sm')?.textContent;
+      if (queryInput) queryInput.value = q;
+      handleSendQuery();
+    });
+  });
+
+  const followUpPills = document.querySelectorAll('.follow-up-pill');
+  followUpPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const q = pill.getAttribute('data-query') || pill.textContent.trim();
+      if (queryInput) queryInput.value = q;
+      handleSendQuery();
+    });
+  });
+
+  const askMandiBtn = document.getElementById('askMandiBtn');
+  if (askMandiBtn) {
+    askMandiBtn.addEventListener('click', () => {
+      if (queryInput) queryInput.value = "करनाल या तरावड़ी मंडी? कहाँ बेचना सबसे फायदेमंद रहेगा?";
+      handleSendQuery();
+    });
+  }
+
+  // ==========================================
+  // 6. DARK / LIGHT MODE TOGGLE
+  // ==========================================
+  const themeBtn = document.getElementById('themeModeToggleBtn');
+  const themeLabel = document.getElementById('themeModeLabel');
+  const themeIcon = document.getElementById('themeModeIcon');
+  let darkModeActive = localStorage.getItem('mandiAurMaatiTheme') === 'dark';
+
+  function applyThemeMode() {
+    document.body.classList.toggle('dark-mode', darkModeActive);
+    document.documentElement.style.colorScheme = darkModeActive ? 'dark' : 'light';
+    if (themeLabel) themeLabel.textContent = darkModeActive ? 'Light Mode' : 'Dark Mode';
+    if (themeIcon) themeIcon.textContent = darkModeActive ? 'light_mode' : 'dark_mode';
+    if (themeBtn) themeBtn.setAttribute('aria-label', darkModeActive ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  applyThemeMode();
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      darkModeActive = !darkModeActive;
+      localStorage.setItem('mandiAurMaatiTheme', darkModeActive ? 'dark' : 'light');
+      applyThemeMode();
+      if (typeof showToast === 'function') {
+        showToast(darkModeActive ? 'Dark mode enabled' : 'Light mode enabled', darkModeActive ? 'dark_mode' : 'light_mode');
+      }
+    });
+  }
+
+  // ==========================================
+  // 7. TRACTOR MODE & ACCENT / SPEED CONTROLS
+  // ==========================================
+  const tractorBtn = document.getElementById('outdoorAudioBtn');
+  const tractorText = document.getElementById('tractorModeText');
+  let isTractorMode = false;
+
+  if (tractorBtn) {
+    tractorBtn.addEventListener('click', () => {
+      isTractorMode = !isTractorMode;
+      if (isTractorMode) {
+        tractorBtn.classList.remove('bg-secondary');
+        tractorBtn.classList.add('bg-tertiary-container', 'ring-2', 'ring-tertiary-fixed');
+        tractorText.textContent = "Loud Tractor: ACTIVE (Boost + Noise Cancel)";
+        showToast("Loud Tractor Mode ON: +12dB Volume Boost & Wind Cancellation active", "volume_up");
+      } else {
+        tractorBtn.classList.add('bg-secondary');
+        tractorBtn.classList.remove('bg-tertiary-container', 'ring-2', 'ring-tertiary-fixed');
+        tractorText.textContent = "Loud Tractor Mode";
+        showToast("Normal audio profile restored", "hearing");
+      }
+    });
+  }
+
+  // Dialect / Accent cycler
+  const accentBtn = document.getElementById('toggleAccentBtn');
+  const accentLabel = document.getElementById('accentLabel');
+  const accents = [
+    "Haryanvi-Hindi",
+    "Malwi-Hindi",
+    "Doabi-Punjabi",
+    "Bhojpuri-Hindi",
+    "Rural Standard"
+  ];
+  let accentIdx = 0;
+  if (accentBtn && accentLabel) {
+    accentBtn.addEventListener('click', () => {
+      accentIdx = (accentIdx + 1) % accents.length;
+      accentLabel.textContent = accents[accentIdx];
+      showToast(`Acoustic Speech Model set to: ${accents[accentIdx]} dialect`, 'record_voice_over');
+    });
+  }
+
+  // Playback Speed cycler
+  const speedBtn = document.getElementById('toggleTtsSpeed');
+  const speedDisplay = document.getElementById('speedDisplay');
+  const speeds = ['1.0x', '1.25x', '1.5x', '0.75x'];
+  let speedIdx = 0;
+
+  if (speedBtn && speedDisplay) {
+    speedBtn.addEventListener('click', () => {
+      speedIdx = (speedIdx + 1) % speeds.length;
+      speedDisplay.textContent = speeds[speedIdx];
+      showToast(`Audio playback speed: ${speeds[speedIdx]}`, 'speed');
+    });
+  }
+
+  // ==========================================
+  // 8. ACTION PLAN BUTTONS & SHARE / SAVE
+  // ==========================================
+  const shareBtn = document.getElementById('shareAdviceBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'MandiAurMaati - Yellow Rust Advisory',
+          text: 'MandiAurMaati frontend demo. Verify weather, crop diagnosis and treatment with official local sources before acting.',
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        const shareText = 'MandiAurMaati advisory (demo): ' + (document.getElementById('diagnosisDescription')?.textContent || 'Please verify agricultural advice locally.') + '\n' + window.location.href;
+        if (navigator.clipboard?.writeText) navigator.clipboard.writeText(shareText).then(() => showToast('Share text copied to clipboard.', 'content_copy')).catch(() => showToast('Sharing is unavailable in this browser.', 'info'));
+        else showToast('Sharing is unavailable in this browser.', 'info');
+      }
+    });
+  }
+
+  const saveBtn = document.getElementById('saveAdviceBtn');
+  const saveIcon = document.getElementById('saveIcon');
+  const saveBtnText = document.getElementById('saveBtnText');
+  let isSaved = localStorage.getItem('mandiAurMaatiAdviceSaved') === 'true';
+  if (isSaved && saveIcon && saveBtnText && saveBtn) { saveIcon.textContent = 'bookmark_added'; saveBtnText.textContent = 'Saved'; saveBtn.classList.add('bg-primary','text-white'); }
+
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      isSaved = !isSaved;
+      localStorage.setItem('mandiAurMaatiAdviceSaved', String(isSaved));
+      if (isSaved) {
+        saveIcon.textContent = 'bookmark_added';
+        saveBtnText.textContent = 'Saved';
+        saveBtn.classList.add('bg-primary', 'text-white');
+        showToast("Advisory saved to your Farmer Field Notebook!", "bookmark");
+      } else {
+        saveIcon.textContent = 'bookmark';
+        saveBtnText.textContent = 'Save';
+        saveBtn.classList.remove('bg-primary', 'text-white');
+        showToast("Removed from saved notebooks", "bookmark_border");
+      }
+    });
+  }
+
+  const markAppliedBtn = document.getElementById('markAppliedBtn');
+  if (markAppliedBtn) {
+    if (localStorage.getItem('mandiAurMaatiApplied') === 'true') { markAppliedBtn.textContent = 'Action Recorded'; markAppliedBtn.classList.add('bg-primary','text-white'); }
+    markAppliedBtn.addEventListener('click', () => {
+      localStorage.setItem('mandiAurMaatiApplied', 'true');
+      markAppliedBtn.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed-variant');
+      markAppliedBtn.classList.add('bg-primary', 'text-white');
+      markAppliedBtn.innerHTML = `<span class="material-symbols-outlined text-sm">check_circle</span> <span>Action Recorded</span>`;
+      showToast("Noted! Marked as acknowledged in your Plot #4 crop logbook.", "task_alt");
+    });
+  }
+
+
+  // MandiAurMaati Farm Hub: frontend-only tools. All records stay in this browser.
+  (() => {
+    const $ = (id) => document.getElementById(id);
+    const KEY = 'mandiAurMaatiFarmHubV1';
+    const blank = { profile:{}, notes:[], tasks:[], soil:[], communityDrafts:[] };
+    const readStore = () => {
+      try { return { ...blank, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; }
+      catch { return structuredClone(blank); }
+    };
+    let store = readStore();
+    const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { setStatus('Browser storage is unavailable or full. Export or remove some records.'); } };
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    const setStatus = (message) => { const el = $('settingsStatus'); if (el) el.textContent = message; };
+    const today = new Date().toISOString().slice(0,10);
+    ['taskDate','soilDate'].forEach(id => { if ($(id)) $(id).value = today; });
+
+    function renderProfile() {
+      const p=store.profile||{};
+      ['farmName','farmLocation','farmArea','farmCrop','farmLanguage'].forEach(id=>{if($(id)&&p[id]!==undefined) $(id).value=p[id];});
+      const status=$('farmProfileStatus'); if(status && p.farmName) status.textContent='Saved locally on this device.';
+    }
+    $('farmProfileForm')?.addEventListener('submit',e=>{
+      e.preventDefault();
+      store.profile={farmName:$('farmName').value.trim(),farmLocation:$('farmLocation').value.trim(),farmArea:$('farmArea').value,farmCrop:$('farmCrop').value.trim(),farmLanguage:$('farmLanguage').value};
+      persist(); $('farmProfileStatus').textContent='Farm profile saved on this device. It is not synced to an account.';
+      const mainName=document.querySelector('header .xl\\:flex.flex-col.text-left span');
+      if(mainName && store.profile.farmName) mainName.textContent=store.profile.farmName;
+      if(typeof showToast==='function') showToast('Farm profile saved on this device.','check_circle');
+    });
+
+    function renderNotes(){const host=$('fieldNotesList'); if(!host)return; host.innerHTML=store.notes.length?store.notes.slice().reverse().map(n=>`<div class="maati-list-item"><button type="button" data-delete-note="${esc(n.id)}" aria-label="Delete field note">Delete</button><strong>${esc(n.type)}</strong><br>${esc(n.text)}<br><span class="maati-small">${esc(n.date)}</span></div>`).join(''):'<p class="maati-small">No field notes saved yet.</p>';}
+    $('fieldNoteForm')?.addEventListener('submit',e=>{e.preventDefault();const text=$('fieldNoteText').value.trim();if(!text)return;store.notes.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),type:$('fieldNoteType').value,text,date:new Date().toLocaleString()});persist();e.target.reset();renderNotes();});
+    $('fieldNotesList')?.addEventListener('click',e=>{const id=e.target.dataset.deleteNote;if(!id)return;store.notes=store.notes.filter(n=>n.id!==id);persist();renderNotes();});
+
+    const samplePrices={Wheat:[['Example Market A',2200],['Example Market B',2180],['Example Market C',2240]],Paddy:[['Example Market A',2300],['Example Market B',2260],['Example Market C',2320]],Mustard:[['Example Market A',5400],['Example Market B',5320],['Example Market C',5480]],Maize:[['Example Market A',2050],['Example Market B',1990],['Example Market C',2100]],Cotton:[['Example Market A',6800],['Example Market B',6650],['Example Market C',6900]]};
+    $('mandiSearchBtn')?.addEventListener('click',()=>{const crop=$('mandiCrop').value, loc=$('mandiLocation').value.trim();$('mandiResults').innerHTML=`<p class="maati-demo-note">DEMO ONLY · Not live prices · Not verified for ${esc(loc||'your area')} · ₹ per quintal</p>`+samplePrices[crop].map(([name,price])=>`<div class="maati-result-row"><span>${esc(name)}</span><strong>₹${price.toLocaleString('en-IN')}</strong></div>`).join('')+'<p class="maati-small">Replace these examples with timestamped AGMARKNET or other verified market data when the backend is built.</p>';});
+
+    function renderTasks(){const host=$('taskList');if(!host)return;const tasks=store.tasks.slice().sort((a,b)=>a.date.localeCompare(b.date));host.innerHTML=tasks.length?tasks.map(t=>`<div class="maati-list-item"><button type="button" data-delete-task="${esc(t.id)}">Delete</button><label style="display:flex;gap:8px;align-items:flex-start"><input type="checkbox" data-complete-task="${esc(t.id)}" ${t.done?'checked':''} style="margin-top:3px"><span><strong style="${t.done?'text-decoration:line-through;opacity:.65':''}">${esc(t.title)}</strong><br>${esc(t.crop||'No crop specified')} · Due ${esc(t.date)}</span></label></div>`).join(''):'<p class="maati-small">No tasks yet. Add a reminder above.</p>';}
+    $('taskForm')?.addEventListener('submit',e=>{e.preventDefault();store.tasks.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),title:$('taskTitle').value.trim(),crop:$('taskCrop').value.trim(),date:$('taskDate').value,done:false});persist();e.target.reset();$('taskDate').value=today;renderTasks();});
+    $('taskList')?.addEventListener('click',e=>{const del=e.target.dataset.deleteTask, done=e.target.dataset.completeTask;if(del){store.tasks=store.tasks.filter(t=>t.id!==del);persist();renderTasks();}else if(done){const task=store.tasks.find(t=>t.id===done);if(task)task.done=e.target.checked;persist();renderTasks();}});
+
+    $('profitForm')?.addEventListener('submit',e=>{e.preventDefault();const val=id=>Number($(id).value);const area=val('calcArea'),yieldA=val('calcYield'),price=val('calcPrice'),costs=val('calcInputs')+val('calcLabour')+val('calcOther');if([area,yieldA,price,costs].some(n=>!Number.isFinite(n)||n<0))return;$('profitResult').innerHTML=`<strong>Estimated harvest:</strong> ${(area*yieldA).toLocaleString('en-IN',{maximumFractionDigits:2})} quintals<br><strong>Estimated revenue:</strong> ₹${(area*yieldA*price).toLocaleString('en-IN',{maximumFractionDigits:2})}<br><strong>Total costs entered:</strong> ₹${costs.toLocaleString('en-IN',{maximumFractionDigits:2})}<br><strong>Estimated net:</strong> ₹${(area*yieldA*price-costs).toLocaleString('en-IN',{maximumFractionDigits:2})}<p class="maati-small">Estimate based only on your inputs. Actual yield, quality, deductions, and sale price can differ.</p>`;});
+
+    function renderSoil(){const host=$('soilList');if(!host)return;host.innerHTML=store.soil.length?store.soil.slice().reverse().map(s=>`<div class="maati-list-item"><button type="button" data-delete-soil="${esc(s.id)}">Delete</button><strong>${esc(s.date)}</strong><br>pH: ${esc(s.ph||'Not entered')} · N/P/K: ${esc(s.npk||'Not entered')}<br>${esc(s.notes||'')}</div>`).join(''):'<p class="maati-small">No soil-test records yet.</p>';}
+    $('soilForm')?.addEventListener('submit',e=>{e.preventDefault();const ph=$('soilPh').value;if(ph!==''&&(Number(ph)<0||Number(ph)>14)){ $('soilPh').focus();return; }store.soil.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),date:$('soilDate').value,ph,npk:$('soilNpk').value.trim(),notes:$('soilNotes').value.trim()});persist();e.target.reset();$('soilDate').value=today;renderSoil();});
+    $('soilList')?.addEventListener('click',e=>{const id=e.target.dataset.deleteSoil;if(!id)return;store.soil=store.soil.filter(s=>s.id!==id);persist();renderSoil();});
+
+    const guides=[
+      ['Soil testing','Collect a representative sample following your local soil-testing laboratory instructions. Keep the report and units; use its recommendations for crop and field context.'],
+      ['Irrigation planning','Check crop stage, soil moisture, recent rainfall, forecast, and local extension guidance before deciding when to irrigate.'],
+      ['Pest and disease','Photograph the whole plant and close-up symptoms. Note crop variety, growth stage, and when symptoms began. Confirm uncertain cases before treatment.'],
+      ['Fertilizer','Base nutrient decisions on crop needs and soil-test results. Avoid guessing doses or mixing products without label and expert guidance.'],
+      ['Harvest and storage','Check crop maturity, local weather, moisture requirements, and safe storage practices. Avoid storing grain while too wet.'],
+      ['Farm records','Record dates, input quantities, labor, irrigation, yield, and sale receipts to compare seasons accurately.'],
+      ['Market prices','Compare same-day prices, crop variety/grade, deductions, transport, and payment terms; verify market data source and timestamp.'],
+      ['Government schemes','Use official portals and local agriculture offices to confirm eligibility, deadlines, and required documents.']
+    ];
+    function renderGuides(query=''){const host=$('guideResults');if(!host)return;const q=query.toLowerCase();const found=guides.filter(g=>(g[0]+' '+g[1]).toLowerCase().includes(q));host.innerHTML=found.length?found.map(g=>`<details class="maati-list-item"><summary><strong>${esc(g[0])}</strong></summary><p>${esc(g[1])}</p></details>`).join(''):'<p class="maati-small">No matching guide. Try another keyword.</p>';}
+    $('guideSearch')?.addEventListener('input',e=>renderGuides(e.target.value));
+
+    $('communityForm')?.addEventListener('submit',e=>{e.preventDefault();const topic=$('communityTopic').value.trim(),question=$('communityQuestion').value.trim();const text=`MandiAurMaati — Question draft\nTopic: ${topic}\nLocation: ${store.profile?.farmLocation||'Not specified'}\nCrop: ${store.profile?.farmCrop||'Not specified'}\nQuestion: ${question}\n\nPlease verify advice with a qualified local agricultural expert.`;const out=$('communityDraft');out.hidden=false;out.textContent=text;store.communityDrafts.push({topic,question,date:new Date().toISOString()});persist();const copy=document.createElement('button');copy.type='button';copy.className='maati-btn maati-btn-secondary';copy.textContent='Copy draft';copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(text);copy.textContent='Copied';}catch{copy.textContent='Copy unavailable — select and copy text';}});out.appendChild(document.createElement('br'));out.appendChild(copy);});
+
+    $('largeTextToggle')?.addEventListener('change',e=>$('maatiTools').classList.toggle('large-text',e.target.checked));
+    $('reduceMotionToggle')?.addEventListener('change',e=>{document.body.classList.toggle('maati-reduce-motion',e.target.checked);$('maatiTools').classList.toggle('reduce-motion',e.target.checked);});
+    $('offlineModeToggle')?.addEventListener('change',e=>$('maatiTools').classList.toggle('low-data',e.target.checked));
+    $('exportDataBtn')?.addEventListener('click',()=>{const data={exportedAt:new Date().toISOString(),profile:store.profile,notes:store.notes,tasks:store.tasks,soil:store.soil,communityDrafts:store.communityDrafts};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='mandi-aur-maati-local-data.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);setStatus('Local data export prepared.');});
+    $('clearDataBtn')?.addEventListener('click',()=>{if(!confirm('Delete this Farm Hub local data from this browser? This cannot be undone unless you exported it.'))return;store={...blank,profile:{},notes:[],tasks:[],soil:[],communityDrafts:[]};try{localStorage.removeItem(KEY);}catch{};['farmProfileForm','fieldNoteForm','taskForm','soilForm','communityForm'].forEach(id=>$(id)?.reset());renderProfile();renderNotes();renderTasks();renderSoil();$('communityDraft').hidden=true;setStatus('Farm Hub local data cleared. Other older demo preferences may remain.');});
+
+
+    const PREF_KEY='mandiAurMaatiAlertPrefs';
+    try { const prefs=JSON.parse(localStorage.getItem(PREF_KEY)||'{}');document.querySelectorAll('[data-alert-pref]').forEach(el=>{if(typeof prefs[el.dataset.alertPref]==='boolean')el.checked=prefs[el.dataset.alertPref];});if(prefs.quietStart)$('quietStart').value=prefs.quietStart;if(prefs.quietEnd)$('quietEnd').value=prefs.quietEnd; } catch {}
+    $('saveAlertPrefs')?.addEventListener('click',()=>{const prefs={};document.querySelectorAll('[data-alert-pref]').forEach(el=>prefs[el.dataset.alertPref]=el.checked);prefs.quietStart=$('quietStart').value;prefs.quietEnd=$('quietEnd').value;try{localStorage.setItem(PREF_KEY,JSON.stringify(prefs));$('alertPrefsStatus').textContent='Preferences saved on this device. Notifications are not active until a backend is connected.';}catch{$('alertPrefsStatus').textContent='Could not save preferences in this browser.';}});
+    $('resetStorageChecklist')?.addEventListener('click',()=>document.querySelectorAll('#storageChecklist input[type="checkbox"]').forEach(el=>el.checked=false));
+    document.querySelectorAll('.maati-backend-feature').forEach(btn=>btn.addEventListener('click',()=>{if(typeof showToast==='function')showToast(`${btn.dataset.feature} needs a backend and verified data source.`,'info');else alert(`${btn.dataset.feature} needs a backend and verified data source.`);}));
+
+    renderProfile();renderNotes();renderTasks();renderSoil();renderGuides();
+    // Add functional in-page navigation for existing placeholder links.
+    document.querySelectorAll('a[data-path]').forEach(a=>a.addEventListener('click',e=>{const path=a.dataset.path;const targetMap={'landing-overview':document.querySelector('main'),'farmer-dashboard':$('maatiTools'),'weather-intelligence':$('fieldNoteForm'),'soil-intelligence':$('soilForm'),'kisan-sakha-voice-ai':$('queryForm'),'kisan-chaupal-community':$('communityForm'),'mandi-marketplace':$('marketplaceHub')};const target=targetMap[path];if(target){e.preventDefault();target.scrollIntoView({behavior:document.body.classList.contains('maati-reduce-motion')?'auto':'smooth',block:'start'});if(target.focus)target.focus({preventScroll:true});}}));
+  })();</script><script>/* MandiAurMaati marketplace: functional local prototype. Live data, accounts and server sync need a backend. */
+(function initMandiMarketplace(){
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const KEY = 'mandiAurMaatiMarketplaceV1';
+  const PRICE_KEY = 'mandiAurMaatiPriceLogV1';
+  const blank = { listings: [], requests: [] };
+  const read = (key, fallback) => { try { const v = JSON.parse(localStorage.getItem(key) || 'null'); return v && typeof v === 'object' ? v : fallback; } catch (_) { return fallback; } };
+  let data = read(KEY, blank);
+  if (!Array.isArray(data.listings)) data.listings = [];
+  if (!Array.isArray(data.requests)) data.requests = [];
+  // Shared listings are fetched from the existing Express API; local demo entries remain separate.
+  let serverListings = [];
+  const API_BASE = 'http://localhost:3000';
+  let prices = read(PRICE_KEY, []); if (!Array.isArray(prices)) prices = [];
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(data)); status('Marketplace changes saved on this device.'); } catch (_) { status('Could not save: browser storage may be full or disabled.'); } };
+  const status = msg => { const el = $('marketplaceStatus'); if (el) el.textContent = msg; };
+  const fmt = n => Number(n).toLocaleString('en-IN', {maximumFractionDigits:2});
+  const cropCatalogue = [
+    ['Cereals & grains','Wheat'],['Cereals & grains','Paddy'],['Cereals & grains','Basmati paddy'],['Cereals & grains','Rice'],['Cereals & grains','Maize / corn'],['Cereals & grains','Barley'],['Cereals & grains','Oats'],['Cereals & grains','Sorghum / jowar'],['Cereals & grains','Pearl millet / bajra'],['Cereals & grains','Finger millet / ragi'],['Cereals & grains','Rye'],['Cereals & grains','Other cereal'],
+    ['Pulses & legumes','Chickpea / chana'],['Pulses & legumes','Kabuli chana'],['Pulses & legumes','Pigeon pea / arhar / tur'],['Pulses & legumes','Lentil / masoor'],['Pulses & legumes','Green gram / moong'],['Pulses & legumes','Black gram / urad'],['Pulses & legumes','Kidney bean / rajma'],['Pulses & legumes','Field pea / matar'],['Pulses & legumes','Cowpea / lobia'],['Pulses & legumes','Horse gram'],['Pulses & legumes','Other pulse'],
+    ['Oilseeds','Mustard'],['Oilseeds','Rapeseed'],['Oilseeds','Groundnut / peanut'],['Oilseeds','Soybean'],['Oilseeds','Sunflower seed'],['Oilseeds','Sesame / til'],['Oilseeds','Linseed / flaxseed'],['Oilseeds','Safflower'],['Oilseeds','Castor seed'],['Oilseeds','Other oilseed'],
+    ['Vegetables','Potato'],['Vegetables','Onion'],['Vegetables','Tomato'],['Vegetables','Cauliflower'],['Vegetables','Cabbage'],['Vegetables','Brinjal / eggplant'],['Vegetables','Okra / bhindi'],['Vegetables','Green chilli'],['Vegetables','Capsicum'],['Vegetables','Cucumber'],['Vegetables','Pumpkin'],['Vegetables','Bottle gourd'],['Vegetables','Bitter gourd'],['Vegetables','Ridge gourd'],['Vegetables','Sponge gourd'],['Vegetables','Carrot'],['Vegetables','Radish'],['Vegetables','Turnip'],['Vegetables','Beetroot'],['Vegetables','Spinach'],['Vegetables','Mustard greens / sarson saag'],['Vegetables','Fenugreek leaves / methi'],['Vegetables','Peas'],['Vegetables','French beans'],['Vegetables','Cluster beans / guar'],['Vegetables','Drumstick'],['Vegetables','Sweet corn'],['Vegetables','Garlic'],['Vegetables','Ginger'],['Vegetables','Other vegetable'],
+    ['Fruits','Mango'],['Fruits','Banana'],['Fruits','Apple'],['Fruits','Orange'],['Fruits','Mandarin / kinnow'],['Fruits','Grapes'],['Fruits','Guava'],['Fruits','Papaya'],['Fruits','Pomegranate'],['Fruits','Watermelon'],['Fruits','Muskmelon'],['Fruits','Litchi'],['Fruits','Pineapple'],['Fruits','Lemon'],['Fruits','Pear'],['Fruits','Peach'],['Fruits','Plum'],['Fruits','Strawberry'],['Fruits','Ber'],['Fruits','Other fruit'],
+    ['Spices & condiments','Turmeric'],['Spices & condiments','Dry chilli'],['Spices & condiments','Coriander seed'],['Spices & condiments','Cumin / jeera'],['Spices & condiments','Fennel / saunf'],['Spices & condiments','Fenugreek seed'],['Spices & condiments','Cardamom'],['Spices & condiments','Black pepper'],['Spices & condiments','Ajwain'],['Spices & condiments','Garlic'],['Spices & condiments','Ginger'],['Spices & condiments','Other spice'],
+    ['Plantation crops','Cotton'],['Plantation crops','Sugarcane'],['Plantation crops','Tea'],['Plantation crops','Coffee'],['Plantation crops','Jute'],['Plantation crops','Tobacco'],['Plantation crops','Coconut'],['Plantation crops','Arecanut'],['Plantation crops','Rubber'],['Plantation crops','Other plantation crop'],
+    ['Fodder crops','Berseem'],['Fodder crops','Lucerne / alfalfa'],['Fodder crops','Fodder maize'],['Fodder crops','Fodder sorghum'],['Fodder crops','Napier grass'],['Fodder crops','Other fodder'],
+    ['Flowers','Marigold'],['Flowers','Rose'],['Flowers','Jasmine'],['Flowers','Chrysanthemum'],['Flowers','Gladiolus'],['Flowers','Other flower'],
+    ['Medicinal & aromatic','Aloe vera'],['Medicinal & aromatic','Ashwagandha'],['Medicinal & aromatic','Tulsi'],['Medicinal & aromatic','Mint / pudina'],['Medicinal & aromatic','Lemongrass'],['Medicinal & aromatic','Other medicinal or aromatic crop'],
+    ['Nuts & dry fruits','Almond'],['Nuts & dry fruits','Walnut'],['Nuts & dry fruits','Cashew'],['Nuts & dry fruits','Raisin'],['Nuts & dry fruits','Other nut or dry fruit'],
+    ['Seeds & planting material','Wheat seed'],['Seeds & planting material','Paddy seed'],['Seeds & planting material','Vegetable seeds'],['Seeds & planting material','Seedlings / nursery plants'],['Seeds & planting material','Other seeds or planting material'],
+    ['Other agricultural produce','Honey'],['Other agricultural produce','Mushroom'],['Other agricultural produce','Compost / vermicompost'],['Other agricultural produce','Other agricultural produce']
+  ];
+  const normalizeCrop = value => String(value||'').trim().toLocaleLowerCase().replace(/\s+/g,' ');
+  const cropCategoryFor = crop => { const key=normalizeCrop(crop); const hit=cropCatalogue.find(x=>normalizeCrop(x[1])===key); return hit ? hit[0] : ''; };
+  const cropDatalist = $('cropSuggestions');
+  if(cropDatalist){ cropCatalogue.forEach(([category,name])=>{const opt=document.createElement('option');opt.value=name;opt.label=category+' — '+name;cropDatalist.append(opt);}); }
+  const cropInput=$('listingCrop'), categoryInput=$('listingCategory');
+  if(cropInput && categoryInput){ cropInput.addEventListener('input',()=>{const found=cropCategoryFor(cropInput.value);if(found)categoryInput.value=found;});cropInput.addEventListener('change',()=>{const found=cropCategoryFor(cropInput.value);if(found)categoryInput.value=found;}); }
+  const node = (tag, cls, txt) => { const el = document.createElement(tag); if (cls) el.className = cls; if (txt !== undefined) el.textContent = txt; return el; };
+  const safeDate = v => { const d = new Date(v); return Number.isNaN(d.getTime()) ? 'Date not set' : d.toLocaleDateString(); };
+  function haversine(lat1, lon1, lat2, lon2){ const rad = d => d*Math.PI/180; const dLat=rad(lat2-lat1), dLon=rad(lon2-lon1); const a=Math.sin(dLat/2)**2+Math.cos(rad(lat1))*Math.cos(rad(lat2))*Math.sin(dLon/2)**2; return 6371*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a)); }
+  function validCoords(lat, lon){ return lat !== '' && lon !== '' && Number.isFinite(Number(lat)) && Number.isFinite(Number(lon)) && Math.abs(Number(lat))<=90 && Math.abs(Number(lon))<=180; }
+  function makeAction(label, cls, action){ const b=node('button',cls,label); b.type='button'; b.addEventListener('click',action); return b; }
+  function renderListings(){
+    const wrap=$('marketplaceListings'); if(!wrap) return; wrap.replaceChildren();
+    const query=($('marketSearch')?.value||'').trim().toLowerCase(); const crop=($('marketFilterCrop')?.value||'').trim().toLowerCase(); const category=($('marketFilterCategory')?.value||'').trim(); const maxKm=Number($('marketMaxDistance')?.value||0);
+    const buyerLat=$('buyerLatitude')?.value||'', buyerLon=$('buyerLongitude')?.value||'';
+    const allListings=[...serverListings, ...data.listings];
+    const visible=allListings.filter(l=>{
+      const hay=[l.crop,l.category,l.location,l.seller,l.quality,l.notes,l.type].join(' ').toLowerCase();
+      if(query && !hay.includes(query)) return false;
+      if(crop && !normalizeCrop(l.crop).includes(crop)) return false;
+      if(category && (l.category || cropCategoryFor(l.crop))!==category) return false;
+      if(maxKm>0 && validCoords(buyerLat,buyerLon) && validCoords(l.lat,l.lon) && haversine(Number(buyerLat),Number(buyerLon),Number(l.lat),Number(l.lon))>maxKm) return false;
+      return true;
+    }).sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
+    if(!visible.length){ wrap.append(node('p','maati-muted','No matching listings yet. Add a crop listing or change your filters.')); return; }
+    visible.forEach(l=>{
+      const card=node('article','market-listing-card');
+      const head=node('div','market-listing-head'); const title=node('h4','',l.crop); const badge=node('span','market-stock-badge',l.status==='sold'?'Sold':`${fmt(l.quantity)} ${l.unit} available`); head.append(title,badge); card.append(head);
+      const listingCategory=l.category || cropCategoryFor(l.crop); if(listingCategory) card.append(node('span','market-category-badge',listingCategory));
+      card.append(node('p','market-price','₹'+fmt(l.price)+(l.source==='server' ? ' / '+(l.priceUnit || 'unit') : ' / quintal')));
+      card.append(node('p','market-meta',`${l.type} · ${l.location} · Posted ${safeDate(l.createdAt)}`));
+      if(l.quality) card.append(node('p','market-meta','Quality: '+l.quality));
+      if(l.notes) card.append(node('p','market-notes',l.notes));
+      if(validCoords(buyerLat,buyerLon)&&validCoords(l.lat,l.lon)) card.append(node('p','market-distance',`Approx. straight-line distance: ${fmt(haversine(Number(buyerLat),Number(buyerLon),Number(l.lat),Number(l.lon)))} km (not road distance)`));
+      else card.append(node('p','market-meta','Distance not calculated — enter buyer and listing coordinates to estimate it.'));
+      const actions=node('div','market-actions');
+      if(l.source==='server'){
+        // Do not expose local-only purchase/stock/delete actions for shared server records.
+        actions.append(node('p','market-small','Shared listing from the marketplace. Buyer requests and seller stock management will be enabled after secure sign-in and server endpoints are added.'));
+      } else {
+        if(l.status!=='sold') actions.append(makeAction('Request purchase','maati-btn',()=>requestPurchase(l.id)));
+        if(l.contact){ const digits=l.contact.replace(/[^0-9+]/g,''); if(digits){ const a=node('a','maati-btn maati-btn-secondary','Contact seller'); a.href='tel:'+digits; a.setAttribute('aria-label','Call seller '+l.seller); actions.append(a); } }
+        actions.append(makeAction('Manage stock','maati-btn maati-btn-secondary',()=>manageStock(l.id)));
+        actions.append(makeAction('Delete listing','maati-btn maati-btn-danger',()=>deleteListing(l.id)));
+      }
+      card.append(actions); wrap.append(card);
+    });
+  }
+  function requestPurchase(id){ const l=data.listings.find(x=>x.id===id); if(!l||l.status==='sold') return; const buyer=prompt('Your name or business name:'); if(!buyer||!buyer.trim()) return; const qty=Number(prompt(`Quantity requested (${l.unit}); available: ${l.quantity}`,String(Math.min(1,l.quantity)))); if(!Number.isFinite(qty)||qty<=0||qty>l.quantity){status('Enter a valid quantity no greater than the listed stock.');return;} const contact=prompt('Your phone/contact (optional):')||''; data.requests.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),listingId:id,crop:l.crop,buyer:buyer.trim().slice(0,100),quantity:qty,unit:l.unit,contact:contact.trim().slice(0,60),createdAt:new Date().toISOString(),status:'Pending'}); try{localStorage.setItem(KEY,JSON.stringify(data));}catch(_){} renderRequests(); status('Purchase request saved on this device only. The seller will not receive it until a backend is connected.'); }
+  function manageStock(id){ const l=data.listings.find(x=>x.id===id); if(!l)return; const amount=prompt(`Current stock: ${l.quantity} ${l.unit}. Enter the NEW available quantity, or type SOLD:`,String(l.quantity)); if(amount===null)return; if(amount.trim().toLowerCase()==='sold'){l.quantity=0;l.status='sold';}else{const q=Number(amount);if(!Number.isFinite(q)||q<0){status('Quantity must be zero or greater.');return;}l.quantity=q;l.status=q===0?'sold':'available';} save();renderListings(); }
+  function deleteListing(id){if(!confirm('Delete this listing from this browser?'))return;data.listings=data.listings.filter(l=>l.id!==id);save();renderListings();}
+  function renderRequests(){const wrap=$('marketplaceRequests');if(!wrap)return;wrap.replaceChildren();if(!data.requests.length){wrap.append(node('p','maati-muted','No purchase requests on this device yet.'));return;}data.requests.forEach(r=>{const row=node('div','maati-list-item');row.append(node('strong','',`${r.crop} — ${r.quantity} ${r.unit}`),node('p','',`Buyer: ${r.buyer} · ${r.status} · ${safeDate(r.createdAt)}`));if(r.contact)row.append(node('p','','Buyer contact: '+r.contact));if(r.status!=='Fulfilled') row.append(makeAction('Mark fulfilled','maati-btn maati-btn-secondary',()=>{if(r.status==='Fulfilled')return;const found=data.listings.find(l=>l.id===r.listingId);if(found){found.quantity=Math.max(0,found.quantity-r.quantity);if(found.quantity===0)found.status='sold';}r.status='Fulfilled';save();renderListings();renderRequests();}));else row.append(node('span','maati-small','Fulfilled'));row.append(makeAction('Remove request','maati-btn maati-btn-danger',()=>{data.requests=data.requests.filter(x=>x.id!==r.id);save();renderRequests();}));wrap.append(row);});}
+  function renderPriceLog(){const wrap=$('marketPriceHistory');if(!wrap)return;wrap.replaceChildren();if(!prices.length){wrap.append(node('p','maati-muted','No price records added yet. Add prices you verified from a mandi or official source.'));return;}prices.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).forEach(p=>{const row=node('div','maati-list-item');row.append(node('strong','',`${p.crop}: ₹${fmt(p.price)} / quintal`),node('p','',`${p.market} · ${safeDate(p.date)} · ${p.source}`));row.append(makeAction('Delete','maati-btn maati-btn-danger',()=>{prices=prices.filter(x=>x.id!==p.id);try{localStorage.setItem(PRICE_KEY,JSON.stringify(prices));}catch(_){}renderPriceLog();}));wrap.append(row);});}
+  async function loadSharedListings(){
+    const wrap=$('marketplaceListings');
+    if(wrap && serverListings.length===0) wrap.replaceChildren(node('p','maati-muted','Loading shared crop listings…'));
+    try {
+      const response=await fetch(`${API_BASE}/api/crops`, { headers: { 'Accept':'application/json' } });
+      if(!response.ok) throw new Error(`API returned HTTP ${response.status}`);
+      const payload=await response.json();
+      if(!payload || !Array.isArray(payload.crops)) throw new Error('Unexpected response from crop API');
+      serverListings=payload.crops.map(row=>{
+        const place=[row.village,row.district,row.state].filter(Boolean).join(', ');
+        return {
+          id:String(row.id),
+          source:'server',
+          crop:String(row.crop_name||'Unnamed crop'),
+          category:String(row.category||'Other agricultural produce'),
+          seller:'Marketplace seller',
+          type:'Shared listing',
+          location:place || 'Location not provided',
+          quantity:Number(row.quantity||0),
+          unit:String(row.unit||'units'),
+          price:Number(row.price_per_unit||0),
+          priceUnit:String(row.unit||'unit'),
+          quality:String(row.quality||''),
+          notes:String(row.description||''),
+          contact:'',
+          lat:row.latitude==null?'':String(row.latitude),
+          lon:row.longitude==null?'':String(row.longitude),
+          status:String(row.status||'available'),
+          createdAt:row.created_at||new Date().toISOString()
+        };
+      });
+      renderListings();
+      status(`Connected to marketplace API. Loaded ${serverListings.length} shared available listing(s).`);
+    } catch(error) {
+      console.error('Could not load shared crop listings:',error);
+      renderListings();
+      status('Could not load shared listings from the API. Check that the backend is running at http://localhost:3000, then refresh. Your local demo listings are unchanged.');
+    }
+  }
+
+const listingForm = $('marketListingForm');
+  if (listingForm) listingForm.addEventListener('submit', e => {
+    e.preventDefault();
+    try {
+      const crop=$('listingCrop').value.trim(), seller=$('listingSeller').value.trim(), location=$('listingLocation').value.trim();
+      const quantity=Number($('listingQuantity').value), price=Number($('listingPrice').value), contact=$('listingContact').value.trim();
+      const unit=$('listingUnit').value, lat=$('listingLat').value.trim(), lon=$('listingLon').value.trim();
+      if (!crop || !seller || !location || $('listingQuantity').value.trim()==='' || !Number.isFinite(quantity) || quantity<=0 || $('listingPrice').value.trim()==='' || !Number.isFinite(price) || price<0) {
+        status('Please enter crop, seller/farm name, location, a quantity greater than zero, and a valid asking price.'); return;
+      }
+      if ((lat || lon) && !validCoords(lat,lon)) { status('Enter both valid coordinates: latitude -90 to 90 and longitude -180 to 180, or leave both blank.'); return; }
+      const id = (window.crypto && typeof window.crypto.randomUUID === 'function') ? window.crypto.randomUUID() : String(Date.now())+'-'+Math.random().toString(36).slice(2);
+      const listing={id,crop:crop.slice(0,80),category:$('listingCategory').value || cropCategoryFor(crop) || 'Other agricultural produce',seller:seller.slice(0,100),type:$('listingSellerType').value,location:location.slice(0,140),quantity,unit,price,quality:$('listingQuality').value.trim().slice(0,100),notes:$('listingNotes').value.trim().slice(0,500),contact:contact.slice(0,60),lat,lon,status:'available',createdAt:new Date().toISOString()};
+      data.listings.unshift(listing);
+      let saved = false;
+      try { localStorage.setItem(KEY, JSON.stringify(data)); saved = true; } catch (_) {}
+      renderListings();
+      listingForm.reset();
+      status(saved ? 'Success — your crop listing was added below and saved in this browser only.' : 'Your crop listing was added below for this session, but browser storage is blocked. It may disappear when you reload this page.');
+      $('marketplaceListings')?.scrollIntoView({behavior:'auto',block:'nearest'});
+    } catch (err) {
+      console.error('Could not add marketplace listing:', err);
+      status('Could not add the listing because of a browser error. Refresh the page and try again; if it continues, open the browser console for details.');
+    }
+  });
+  ['marketSearch','marketFilterCrop','marketFilterCategory','marketMaxDistance','buyerLatitude','buyerLongitude'].forEach(id=>$(id)?.addEventListener('input',renderListings));
+  $('marketPriceForm')?.addEventListener('submit',e=>{e.preventDefault();const crop=$('priceLogCrop').value.trim(),market=$('priceLogMarket').value.trim(),price=Number($('priceLogValue').value),date=$('priceLogDate').value,source=$('priceLogSource').value.trim();if(!crop||!market||!date||!source||!Number.isFinite(price)||price<0){status('Fill all price record fields with a valid price.');return;}prices.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),crop:crop.slice(0,80),market:market.slice(0,120),price,date,source:source.slice(0,150)});try{localStorage.setItem(PRICE_KEY,JSON.stringify(prices));}catch(_){}e.target.reset();$('priceLogDate').value=new Date().toISOString().slice(0,10);renderPriceLog();status('Price note saved. It is user-entered, not automatically verified.');});
+  $('marketExportBtn')?.addEventListener('click',()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),listings:data.listings,requests:data.requests,priceRecords:prices},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=node('a');a.href=url;a.download='mandiaurmaati-marketplace.json';document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);status('Marketplace data export prepared.');});
+  $('marketClearBtn')?.addEventListener('click',()=>{if(!confirm('Clear all local marketplace listings, requests and price notes on this device?'))return;data={listings:[],requests:[]};prices=[];try{localStorage.removeItem(KEY);localStorage.removeItem(PRICE_KEY);}catch(_){}renderListings();renderRequests();renderPriceLog();status('Local marketplace data cleared.');});
+  if($('priceLogDate')) $('priceLogDate').value=new Date().toISOString().slice(0,10);
+  renderListings();renderRequests();renderPriceLog();
+  loadSharedListings();
+})();</script><script id="maati-sidebar-script">
+(function(){
+  const side=document.getElementById("maatiSidebar");
+  const toggle=document.getElementById("maatiSidebarToggle");
+  if(!side || !toggle) return;
+  let backdrop=document.getElementById("maatiSidebarBackdrop");
+  if(!backdrop){ backdrop=document.createElement("button"); backdrop.id="maatiSidebarBackdrop"; backdrop.type="button"; backdrop.setAttribute("aria-label","Close dashboard menu"); backdrop.hidden=true; document.body.appendChild(backdrop); }
+  const isOpen=()=>side.classList.contains("open");
+  function openMenu(){ side.classList.add("open"); backdrop.hidden=false; requestAnimationFrame(()=>backdrop.classList.add("visible")); toggle.setAttribute("aria-expanded","true"); toggle.innerHTML='<span aria-hidden="true">✕</span> Close dashboard'; }
+  function closeMenu(){ side.classList.remove("open"); backdrop.classList.remove("visible"); toggle.setAttribute("aria-expanded","false"); toggle.innerHTML='<span class="material-symbols-outlined" style="vertical-align:middle;margin-right:5px">dashboard</span> Dashboard'; window.setTimeout(()=>{if(!isOpen()) backdrop.hidden=true;},220); }
+  toggle.addEventListener("click",()=>isOpen()?closeMenu():openMenu());
+  backdrop.addEventListener("click",closeMenu);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape" && isOpen()) closeMenu();});
+  side.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{
+    const id=a.getAttribute("href").slice(1), target=document.getElementById(id);
+    if(!target) return;
+    e.preventDefault();
+    side.querySelectorAll("a").forEach(x=>x.removeAttribute("aria-current"));
+a.setAttribute("aria-current", "location");
+    closeMenu();
+    target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+    if(history && history.replaceState) history.replaceState(null,"","#"+id);
+  }));
+  // Start with the full workspace visible on every screen size.
+  closeMenu();
+})();
+</script>
+<style id="maati-top-nav-cards-fix">
+header.fixed.top-0 { height: 76px; }
+header.fixed.top-0 > div { min-height:76px; height:76px; padding-left:14px!important; padding-right:14px!important; gap:12px!important; }
+header.fixed.top-0 > div > div:first-child { min-width:0; flex:1 1 auto; gap:clamp(8px,1vw,18px)!important; }
+header.fixed.top-0 nav[data-active-classes] { display:flex!important; flex:1 1 auto; min-width:0; gap:7px!important; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; align-items:center; }
+header.fixed.top-0 nav[data-active-classes]::-webkit-scrollbar { display:none; }
+header.fixed.top-0 nav[data-active-classes] a {
+  display:flex!important; flex-direction:column; align-items:center; justify-content:center;
+  gap:3px; flex:0 0 auto; min-width:76px; max-width:108px; min-height:54px;
+  padding:7px 10px!important; border:1px solid rgba(226,244,228,.20);
+  border-radius:13px!important; background:rgba(255,255,255,.055);
+  color:#e8f4e8!important; text-align:center; text-decoration:none;
+  line-height:1.1; white-space:normal; transition:background .18s ease,border-color .18s ease,transform .18s ease;
+}
+header.fixed.top-0 nav[data-active-classes] a:hover { background:rgba(210,242,205,.15); border-color:rgba(210,242,205,.45); transform:translateY(-1px); }
+header.fixed.top-0 nav[data-active-classes] a.is-current,
+header.fixed.top-0 nav[data-active-classes] a[aria-current="page"] {
+  background:#d9f0d7!important; color:#075b3e!important; border-color:#b9e4b7!important;
+  box-shadow:0 3px 10px rgba(0,0,0,.12); font-weight:700;
+}
+header.fixed.top-0 nav[data-active-classes] a .maati-top-icon { font-size:20px; line-height:1; color:#bce8a8; }
+header.fixed.top-0 nav[data-active-classes] a.is-current .maati-top-icon,
+header.fixed.top-0 nav[data-active-classes] a[aria-current="page"] .maati-top-icon { color:#08764d; }
+header.fixed.top-0 nav[data-active-classes] a .maati-top-label { font-size:11px; font-weight:650; max-width:90px; }
+@media(max-width:1279px) {
+ header.fixed.top-0 nav[data-active-classes] { display:flex!important; }
+ header.fixed.top-0 > div > div:first-child { flex:1 1 60%; }
+ header.fixed.top-0 nav[data-active-classes] a { min-width:68px; padding:6px 7px!important; }
+ header.fixed.top-0 nav[data-active-classes] a .maati-top-label { font-size:10px; }
+}
+@media(max-width:850px) {
+ header.fixed.top-0 > div { padding-left:8px!important;padding-right:8px!important; }
+ header.fixed.top-0 > div > div:first-child > div:first-child img { height:30px;width:auto; }
+ header.fixed.top-0 > div > div:first-child > div:first-child .font-headline-sm { font-size:14px; }
+ header.fixed.top-0 nav[data-active-classes] { max-width:52vw; }
+ header.fixed.top-0 nav[data-active-classes] a { min-width:60px; min-height:48px; }
+ header.fixed.top-0 nav[data-active-classes] a .maati-top-icon { font-size:18px; }
+ header.fixed.top-0 nav[data-active-classes] a .maati-top-label { font-size:9px; }
+}
+@media(max-width:560px) {
+ header.fixed.top-0 > div { gap:6px!important; }
+ header.fixed.top-0 nav[data-active-classes] { max-width:45vw; }
+ header.fixed.top-0 .relative.inline-block { display:none; }
+}
+</style>
+<script id="maati-top-nav-active-state">
+document.addEventListener('DOMContentLoaded', function () {
+  const nav = document.querySelector('header.fixed.top-0 nav[data-active-classes]');
+  if (!nav) return;
+  const links = Array.from(nav.querySelectorAll('a[data-path]'));
+  function activate(link) {
+    links.forEach(function (item) {
+      const active = item === link;
+      item.classList.toggle('is-current', active);
+      if (active) item.setAttribute('aria-current', 'page');
+      else item.removeAttribute('aria-current');
+    });
+  }
+  links.forEach(function (link) {
+    link.addEventListener('click', function () { activate(link); });
+  });
+  const current = links.find(function (link) { return link.getAttribute('aria-current') === 'page' || link.classList.contains('is-current'); });
+  if (current) activate(current);
+  else if (links.length) activate(links[0]);
+});
+</script>
+
+</body></html>
